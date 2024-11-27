@@ -56,12 +56,30 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGIaoDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGIaoDien.Designer.cs">
+      <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DBConnect.cs" />
     <Compile Include="Model\GlobalValue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGIaoDien.resx">
+      <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\undraw_team_collaboration_re_ow29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\299386875_1328181284381052_6632539030307105957_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

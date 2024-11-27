@@ -96,6 +96,10 @@ namespace QLHD_CLB
                 GlobalValue.HoTen_NguoiDung = dt.Rows[0]["HoTen"].ToString();
                 Message.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                 Message.Show("Đăng nhập thành công");
+
+                FormGIaoDien p = new FormGIaoDien();
+                p.Show();
+                this.Hide();
             }
             else
             {

@@ -55,7 +55,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(508, 117);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(286, 23);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(212, 15);
             this.guna2HtmlLabel1.TabIndex = 23;
             this.guna2HtmlLabel1.Text = "Phầm mềm quản lý hoạt động câu lạc bộ";
             // 
@@ -89,10 +89,10 @@
             this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(542, 354);
+            this.btnDangNhap.Location = new System.Drawing.Point(542, 323);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(317, 47);
-            this.btnDangNhap.TabIndex = 18;
+            this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
@@ -116,7 +116,7 @@
             this.txtMK.PlaceholderText = "Mật khẩu";
             this.txtMK.SelectedText = "";
             this.txtMK.Size = new System.Drawing.Size(317, 55);
-            this.txtMK.TabIndex = 16;
+            this.txtMK.TabIndex = 2;
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // txtTK
@@ -139,7 +139,7 @@
             this.txtTK.PlaceholderText = "Tài khoản";
             this.txtTK.SelectedText = "";
             this.txtTK.Size = new System.Drawing.Size(317, 55);
-            this.txtTK.TabIndex = 17;
+            this.txtTK.TabIndex = 1;
             // 
             // label1
             // 
@@ -147,7 +147,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(500, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(363, 48);
+            this.label1.Size = new System.Drawing.Size(246, 32);
             this.label1.TabIndex = 15;
             this.label1.Text = "Chào mừng đến CLB";
             // 
@@ -199,8 +199,9 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.ResumeLayout(false);
