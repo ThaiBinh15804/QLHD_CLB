@@ -94,6 +94,7 @@ namespace QLHD_CLB
             if (dt != null && dt.Rows.Count > 0)
             {
                 GlobalValue.HoTen_NguoiDung = dt.Rows[0]["HoTen"].ToString();
+                GlobalValue.AnhDaiDien_NguoiDung = dt.Rows[0]["AnhDaiDien"].ToString();
                 Message.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                 Message.Show("Đăng nhập thành công");
 

@@ -50,17 +50,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBanCLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBanCLB.Designer.cs">
+      <DependentUpon>FormBanCLB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChucVuCLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucVuCLB.Designer.cs">
+      <DependentUpon>FormChucVuCLB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDongQuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDongQuy.Designer.cs">
+      <DependentUpon>FormDongQuy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGIaoDien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGIaoDien.Designer.cs">
       <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNguoiDungCLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNguoiDungCLB.Designer.cs">
+      <DependentUpon>FormNguoiDungCLB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhaTaiTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhaTaiTro.Designer.cs">
+      <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuKien.Designer.cs">
+      <DependentUpon>FormSuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhVien.Designer.cs">
+      <DependentUpon>FormThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThongKe.cs">
       <SubType>Form</SubType>
@@ -72,11 +114,32 @@
     <Compile Include="Model\GlobalValue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBanCLB.resx">
+      <DependentUpon>FormBanCLB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChucVuCLB.resx">
+      <DependentUpon>FormChucVuCLB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDongQuy.resx">
+      <DependentUpon>FormDongQuy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGIaoDien.resx">
       <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNguoiDungCLB.resx">
+      <DependentUpon>FormNguoiDungCLB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhaTaiTro.resx">
+      <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuKien.resx">
+      <DependentUpon>FormSuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhVien.resx">
+      <DependentUpon>FormThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
@@ -111,6 +174,14 @@
   <ItemGroup>
     <None Include="Resources\299386875_1328181284381052_6632539030307105957_n.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="HinhAnh\AnhDaiDien\h5.jpg" />
+    <Content Include="HinhAnh\AnhDaiDien\h4.jpg" />
+    <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
+    <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
+    <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
