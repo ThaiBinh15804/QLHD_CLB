@@ -37,12 +37,18 @@ namespace QLHD_CLB
             label_title_page.Font = new Font("Segoe UI", 16, FontStyle.Bold); // Đặt font Arial, kích thước 16, kiểu chữ thường
             container(new FormThongKe());
             label_TenNguoiDung.Text = GlobalValue.HoTen_NguoiDung;
-            string projectPath = Environment.CurrentDirectory;
-            string imagePath = Path.Combine(projectPath, "HinhAnh", "AnhDaiDien", GlobalValue.AnhDaiDien_NguoiDung);
 
-            if (File.Exists(imagePath))
+            string relativePath = @"HinhAnh\AnhDaiDien\"; // Đường dẫn tương đối từ thư mục gốc dự án
+            string projectDirectory = Directory.GetParent(Application.StartupPath).Parent.FullName; // Quay lại 3 cấp
+            string absolutePath = Path.Combine(projectDirectory, relativePath, GlobalValue.AnhDaiDien_NguoiDung);
+
+            if (File.Exists(absolutePath))
             {
-                guna2CirclePictureBox1.Image = Image.FromFile(imagePath);
+                guna2CirclePictureBox1.Image = Image.FromFile(absolutePath);
+            }
+            else
+            {
+                MessageBox.Show("Ảnh đại diện không tồn tại!");
             }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -100,6 +106,26 @@ namespace QLHD_CLB
             container(new FormDongQuy());
         }
 
+        private void guna2Panel_sidebar_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            FormDangNhap formDangNhap = new FormDangNhap();
+            formDangNhap.Show();
+            this.Close();
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

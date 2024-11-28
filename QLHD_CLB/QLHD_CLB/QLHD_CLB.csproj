@@ -180,6 +180,7 @@
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
+    <None Include="Resources\logotruong.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
