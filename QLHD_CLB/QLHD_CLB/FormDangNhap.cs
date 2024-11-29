@@ -98,7 +98,7 @@ namespace QLHD_CLB
                 Message.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                 Message.Show("Đăng nhập thành công");
 
-                FormGIaoDien p = new FormGIaoDien();
+                FormGiaoDien p = new FormGiaoDien();
                 p.Show();
                 this.Hide();
             }

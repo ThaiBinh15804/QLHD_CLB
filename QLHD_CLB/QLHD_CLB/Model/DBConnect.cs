@@ -59,14 +59,16 @@ namespace QLHD_CLB.Model
         }
 
         // Lấy giá trị trả về như COUNT, SUM, MAX, MIN, AVG
-        public int getScalar(string sql)
+        public object getScalar(string sql)
         {
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
-            int k = (int)cmd.ExecuteScalar();
+            object k = cmd.ExecuteScalar();
             con.Close();
             return k;
         }
+
+
 
 
     }

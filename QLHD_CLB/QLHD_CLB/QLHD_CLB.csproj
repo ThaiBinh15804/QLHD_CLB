@@ -74,11 +74,11 @@
     <Compile Include="FormDongQuy.Designer.cs">
       <DependentUpon>FormDongQuy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGIaoDien.cs">
+    <Compile Include="FormGiaoDien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGIaoDien.Designer.cs">
-      <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    <Compile Include="FormGiaoDien.Designer.cs">
+      <DependentUpon>FormGiaoDien.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNguoiDungCLB.cs">
       <SubType>Form</SubType>
@@ -92,11 +92,23 @@
     <Compile Include="FormNhaTaiTro.Designer.cs">
       <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhaTaiTroCu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhaTaiTroCu.Designer.cs">
+      <DependentUpon>FormNhaTaiTroCu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuKien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSuKien.Designer.cs">
       <DependentUpon>FormSuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTao_SuaNTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTao_SuaNTT.Designer.cs">
+      <DependentUpon>FormTao_SuaNTT.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThanhVien.cs">
       <SubType>Form</SubType>
@@ -114,6 +126,11 @@
     <Compile Include="Model\GlobalValue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyCauLacBoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCauLacBoDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBanCLB.resx">
       <DependentUpon>FormBanCLB.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +143,8 @@
     <EmbeddedResource Include="FormDongQuy.resx">
       <DependentUpon>FormDongQuy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGIaoDien.resx">
-      <DependentUpon>FormGIaoDien.cs</DependentUpon>
+    <EmbeddedResource Include="FormGiaoDien.resx">
+      <DependentUpon>FormGiaoDien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNguoiDungCLB.resx">
       <DependentUpon>FormNguoiDungCLB.cs</DependentUpon>
@@ -135,8 +152,14 @@
     <EmbeddedResource Include="FormNhaTaiTro.resx">
       <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNhaTaiTroCu.resx">
+      <DependentUpon>FormNhaTaiTroCu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSuKien.resx">
       <DependentUpon>FormSuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTao_SuaNTT.resx">
+      <DependentUpon>FormTao_SuaNTT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThanhVien.resx">
       <DependentUpon>FormThanhVien.cs</DependentUpon>
@@ -169,6 +192,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyCauLacBoDataSet.xsc">
+      <DependentUpon>QuanLyCauLacBoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCauLacBoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyCauLacBoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyCauLacBoDataSet.xss">
+      <DependentUpon>QuanLyCauLacBoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\undraw_team_collaboration_re_ow29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +214,10 @@
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
+    <None Include="Resources\icons8-forward-50.png" />
+    <None Include="Resources\icons8-reply-arrow-32.png" />
+    <None Include="Resources\icons8-circled-right-48.png" />
+    <None Include="Resources\icons8-back-48.png" />
     <None Include="Resources\logotruong.jpg" />
   </ItemGroup>
   <ItemGroup />
