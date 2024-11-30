@@ -76,16 +76,18 @@ namespace QLHD_CLB
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string tk = txtTK.Text;
-            string mk = txtMK.Text;
+            //string tk = txtTK.Text;
+            //string mk = txtMK.Text;
+            string tk = "nguyenvana";
+            string mk = "123456";
 
-            if (!ValidateInputs())
-            {
-                txtTK.Text = "";
-                txtMK.Text = "";
-                txtTK.Focus();
-                return;
-            }
+            //if (!ValidateInputs())
+            //{
+            //    txtTK.Text = "";
+            //    txtMK.Text = "";
+            //    txtTK.Focus();
+            //    return;
+            //}
 
             DBConnect data = new DBConnect();
             string sql = "SELECT * FROM NguoiDung WHERE TenTaiKhoan = '" + tk + "' AND MatKhau = '" + mk + "'";

@@ -214,6 +214,7 @@
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
+    <None Include="Resources\icons8-save-50.png" />
     <None Include="Resources\icons8-forward-50.png" />
     <None Include="Resources\icons8-reply-arrow-32.png" />
     <None Include="Resources\icons8-circled-right-48.png" />

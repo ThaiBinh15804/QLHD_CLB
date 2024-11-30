@@ -10,7 +10,7 @@ namespace QLHD_CLB.Model
 {
     class DBConnect
     {
-        string constr = "Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = sa123";
+        string constr = "Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
         public SqlConnection con { get; set; }
 
         public DBConnect()
