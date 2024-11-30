@@ -10,29 +10,23 @@ using System.Windows.Forms;
 
 namespace QLHD_CLB
 {
-    public partial class FormTao_SuaNTT : Form
+    public partial class FormSuKien_ChiTiet : Form
     {
         private FormGiaoDien parentForm;
-
-        public FormTao_SuaNTT()
+        public FormSuKien_ChiTiet()
         {
             InitializeComponent();
         }
 
-        public FormTao_SuaNTT(FormGiaoDien _parentForm)
+        public FormSuKien_ChiTiet(FormGiaoDien _parentForm)
         {
             InitializeComponent();
             parentForm = _parentForm;
         }
 
-        private void FormTao_SuaNTT_Load(object sender, EventArgs e)
+        private void FormSuKien_ChiTiet_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            parentForm.container(new FormNhaTaiTro(parentForm));
         }
     }
 }

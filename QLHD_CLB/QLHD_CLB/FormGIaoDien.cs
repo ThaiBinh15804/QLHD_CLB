@@ -51,7 +51,7 @@ namespace QLHD_CLB
 
         private void FormGIaoDien_Load(object sender, EventArgs e)
         {
-            container(new FormNhaTaiTro());
+            container(new FormSuKien(this));
             label_TenNguoiDung.Text = GlobalValue.HoTen_NguoiDung;
 
             string relativePath = @"HinhAnh\AnhDaiDien\"; // Đường dẫn tương đối từ thư mục gốc dự án

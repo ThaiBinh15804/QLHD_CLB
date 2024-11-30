@@ -104,11 +104,11 @@
     <Compile Include="FormSuKien.Designer.cs">
       <DependentUpon>FormSuKien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTao_SuaNTT.cs">
+    <Compile Include="FormSuKien_ChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTao_SuaNTT.Designer.cs">
-      <DependentUpon>FormTao_SuaNTT.cs</DependentUpon>
+    <Compile Include="FormSuKien_ChiTiet.Designer.cs">
+      <DependentUpon>FormSuKien_ChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThanhVien.cs">
       <SubType>Form</SubType>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="FormSuKien.resx">
       <DependentUpon>FormSuKien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTao_SuaNTT.resx">
-      <DependentUpon>FormTao_SuaNTT.cs</DependentUpon>
+    <EmbeddedResource Include="FormSuKien_ChiTiet.resx">
+      <DependentUpon>FormSuKien_ChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThanhVien.resx">
       <DependentUpon>FormThanhVien.cs</DependentUpon>

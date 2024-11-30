@@ -1,6 +1,6 @@
-﻿namespace QLHD_CLB
+﻿namespace WindowsFormsApplication1
 {
-    partial class FormTao_SuaNTT
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,18 @@
         {
             this.SuspendLayout();
             // 
-            // FormTao_SuaNTT
+            // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(867, 514);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormTao_SuaNTT";
-            this.Text = "FormTao_SuaNTT";
-            this.Load += new System.EventHandler(this.FormTao_SuaNTT_Load);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(760, 611);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
     }
 }
+
