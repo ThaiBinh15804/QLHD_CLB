@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Guna.Charts.WinForms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace QLHD_CLB
 {

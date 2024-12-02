@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_DSKeHoachDongQuy = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_LocTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -63,16 +63,16 @@
             this.btn_luu = new Guna.UI2.WinForms.Guna2Button();
             this.btn_xoa = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dtg_dsDongQuy = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_themTVDongQuy = new Guna.UI2.WinForms.Guna2Button();
             this.btn_sua_dongquy = new Guna.UI2.WinForms.Guna2Button();
             this.btn_luu_dongquy = new Guna.UI2.WinForms.Guna2Button();
             this.btn_xoadongquy = new Guna.UI2.WinForms.Guna2Button();
             this.themThanhVienDongQuy = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.comboBoxChonThanhVien = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxChonThanhVien = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_DSKeHoachDongQuy)).BeginInit();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -87,26 +87,26 @@
             // 
             this.dtg_DSKeHoachDongQuy.AllowUserToResizeColumns = false;
             this.dtg_DSKeHoachDongQuy.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dtg_DSKeHoachDongQuy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_DSKeHoachDongQuy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtg_DSKeHoachDongQuy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_DSKeHoachDongQuy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtg_DSKeHoachDongQuy.ColumnHeadersHeight = 40;
             this.dtg_DSKeHoachDongQuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtg_DSKeHoachDongQuy.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtg_DSKeHoachDongQuy.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtg_DSKeHoachDongQuy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtg_DSKeHoachDongQuy.Location = new System.Drawing.Point(12, 99);
             this.dtg_DSKeHoachDongQuy.Name = "dtg_DSKeHoachDongQuy";
@@ -143,7 +143,7 @@
             this.label1.Location = new System.Drawing.Point(899, 9);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(4, 8, 4, 8);
-            this.label1.Size = new System.Drawing.Size(59, 36);
+            this.label1.Size = new System.Drawing.Size(72, 41);
             this.label1.TabIndex = 20;
             this.label1.Text = "Bộ lọc";
             // 
@@ -202,7 +202,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 25);
+            this.label2.Size = new System.Drawing.Size(345, 32);
             this.label2.TabIndex = 13;
             this.label2.Text = "Danh sách kế hoạch đóng quỹ";
             // 
@@ -252,7 +252,7 @@
             this.inputMaKH.AutoSize = true;
             this.inputMaKH.Location = new System.Drawing.Point(59, 139);
             this.inputMaKH.Name = "inputMaKH";
-            this.inputMaKH.Size = new System.Drawing.Size(0, 20);
+            this.inputMaKH.Size = new System.Drawing.Size(0, 25);
             this.inputMaKH.TabIndex = 41;
             this.inputMaKH.Visible = false;
             // 
@@ -262,7 +262,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(12, 275);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 20);
+            this.label8.Size = new System.Drawing.Size(125, 25);
             this.label8.TabIndex = 40;
             this.label8.Text = "Ngày bắt đầu";
             // 
@@ -272,7 +272,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(12, 228);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(125, 25);
             this.label3.TabIndex = 39;
             this.label3.Text = "Ngày bắt đầu";
             // 
@@ -330,7 +330,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(12, 327);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 28;
             this.label4.Text = "Trạng thái";
             // 
@@ -363,7 +363,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(15, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.Size = new System.Drawing.Size(61, 25);
             this.label5.TabIndex = 26;
             this.label5.Text = "Mô tả";
             // 
@@ -373,7 +373,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(12, 184);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
+            this.label6.Size = new System.Drawing.Size(154, 25);
             this.label6.TabIndex = 24;
             this.label6.Text = "Số tiền cần đóng";
             // 
@@ -425,7 +425,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Location = new System.Drawing.Point(12, 51);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 20);
+            this.label16.Size = new System.Drawing.Size(122, 25);
             this.label16.TabIndex = 18;
             this.label16.Text = "Tên kế hoạch";
             // 
@@ -540,36 +540,29 @@
             this.guna2GroupBox2.TabIndex = 28;
             this.guna2GroupBox2.Text = "Danh sách thành viên đóng quỹ";
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(562, 518);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(8, 8);
-            this.panel1.TabIndex = 33;
-            // 
             // dtg_dsDongQuy
             // 
             this.dtg_dsDongQuy.AllowUserToResizeColumns = false;
             this.dtg_dsDongQuy.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dtg_dsDongQuy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_dsDongQuy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dtg_dsDongQuy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_dsDongQuy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtg_dsDongQuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtg_dsDongQuy.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtg_dsDongQuy.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtg_dsDongQuy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtg_dsDongQuy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtg_dsDongQuy.Location = new System.Drawing.Point(0, 40);
@@ -598,6 +591,13 @@
             this.dtg_dsDongQuy.ThemeStyle.RowsStyle.Height = 22;
             this.dtg_dsDongQuy.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtg_dsDongQuy.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(562, 518);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(8, 8);
+            this.panel1.TabIndex = 33;
             // 
             // groupBox2
             // 
@@ -693,6 +693,15 @@
             this.themThanhVienDongQuy.TabIndex = 30;
             this.themThanhVienDongQuy.Text = "Thêm thành viên đóng quỹ";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(153, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Chọn thành viên";
+            // 
             // comboBoxChonThanhVien
             // 
             this.comboBoxChonThanhVien.BackColor = System.Drawing.Color.Transparent;
@@ -707,15 +716,6 @@
             this.comboBoxChonThanhVien.Name = "comboBoxChonThanhVien";
             this.comboBoxChonThanhVien.Size = new System.Drawing.Size(245, 36);
             this.comboBoxChonThanhVien.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Chọn thành viên";
             // 
             // FormDongQuy
             // 

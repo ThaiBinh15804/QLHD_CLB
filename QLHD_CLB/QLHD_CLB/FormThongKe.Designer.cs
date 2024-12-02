@@ -186,9 +186,9 @@
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(142)))), ((int)(((byte)(136)))));
             this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(896, 3);
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(895, 3);
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(291, 143);
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(292, 143);
             this.guna2CustomGradientPanel4.TabIndex = 1;
             // 
             // guna2PictureBox2
@@ -238,7 +238,7 @@
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(299, 3);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(288, 143);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(287, 143);
             this.guna2CustomGradientPanel2.TabIndex = 3;
             // 
             // guna2PictureBox4
@@ -286,7 +286,7 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(190)))), ((int)(((byte)(194)))));
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(593, 3);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(592, 3);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(297, 143);
             this.guna2CustomGradientPanel3.TabIndex = 2;
@@ -391,7 +391,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.17606F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.82394F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 303F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel4, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2CustomGradientPanel3, 2, 0);

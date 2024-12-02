@@ -98,7 +98,7 @@ namespace QLHD_CLB
         private void comboBox_TrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Lấy giá trị của mục được chọn từ ComboBox
-            string trangThai = comboBox_LocTrangThai.SelectedItem?.ToString(); // Sử dụng SelectedItem để lấy chuỗi
+            string trangThai = comboBox_LocTrangThai.SelectedItem.ToString(); // Sử dụng SelectedItem để lấy chuỗi
 
             if (trangThai != null)
             {
@@ -168,11 +168,13 @@ namespace QLHD_CLB
 
                 string ngayBatDau = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày bắt đầu"].Value.ToString();
                 string ngayKetThuc = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày kết thúc"].Value.ToString();
-                if (DateTime.TryParse(ngayBatDau, out DateTime parsedDate))
+                DateTime parsedDate;
+                if (DateTime.TryParse(ngayBatDau, out parsedDate ))
                 {
                     guna2DateTimePicker1.Value = parsedDate; // Gán giá trị ngày sau khi chuyển đổi
                 }
-                if (DateTime.TryParse(ngayKetThuc, out DateTime parsedDate2))
+                DateTime parsedDate2;
+                if (DateTime.TryParse(ngayKetThuc, out parsedDate2))
                 {
                     guna2DateTimePicker2.Value = parsedDate2; // Gán giá trị ngày sau khi chuyển đổi
                 }
@@ -439,18 +441,21 @@ namespace QLHD_CLB
                 string matv = selectedRow.Cells["Mã thành viên"].Value.ToString();
                 // Cập nhật dữ liệu cho dòng được chọn
                 DateTime ngayDong = DateTime.Now;
-                string update = $"UPDATE DongQuy SET TrangThai = {(isChecked ? 1 : 0)}, NgayDong = '{ngayDong.ToString("yyyy-MM-dd")}' WHERE MaThanhVien = '{matv}' and MaKeHoach = '{inputMaKH.Text}'";
+                string ngayDongFormatted = ngayDong.ToString("yyyy-MM-dd");
 
+                string update = string.Format(
+                "UPDATE DongQuy SET TrangThai = {0}, NgayDong = '{1}' WHERE MaThanhVien = '{2}' AND MaKeHoach = '{3}'", 
+                isChecked ? 1 : 0, ngayDongFormatted, matv, inputMaKH.Text);
                 try
                 {
                     DataTable dt = db.getSqlDataAdapter(update);
                     HienThiDSThanhVienDongQuy(inputMaKH.Text);
-                    MessageBox.Show($"Cập nhật trạng thái cho thành viên {hoTen} thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(string.Format("Cập nhật trạng thái cho thành viên {0} thành công!", hoTen),  "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btn_luu_dongquy.Enabled = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Không thể cập nhật trạng thái cho thành viên {hoTen}. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     MessageBox.Show(string.Format("Không thể cập nhật trạng thái cho thành viên {0}. Vui lòng thử lại.", hoTen),  "Thông báo",  MessageBoxButtons.OK,  MessageBoxIcon.Warning);
                 }
             }
             else
@@ -469,7 +474,11 @@ namespace QLHD_CLB
                 string matv = selectedRow.Cells["Mã thành viên"].Value.ToString();
 
                 // Kiểm tra điều kiện: NgayDong = NULL và TrangThai = 0
-                string checkQuery = $"SELECT 1 FROM DongQuy WHERE MaThanhVien = '{matv}' AND MaKeHoach = '{inputMaKH.Text}' AND TrangThai IS NULL AND NgayDong IS NULL";
+                string checkQuery = string.Format(
+                    "SELECT 1 FROM DongQuy WHERE MaThanhVien = '{0}' AND MaKeHoach = '{1}' AND TrangThai IS NULL AND NgayDong IS NULL",
+                    matv,
+                    inputMaKH.Text
+                );
 
                 try
                 {
@@ -477,19 +486,39 @@ namespace QLHD_CLB
 
                     if (checkResult.Rows.Count > 0) // Điều kiện thỏa mãn
                     {
-                        string deleteQuery = $"DELETE FROM DongQuy WHERE MaThanhVien = '{matv}' AND MaKeHoach = '{inputMaKH.Text}'";
+                        string deleteQuery = string.Format(
+                            "DELETE FROM DongQuy WHERE MaThanhVien = '{0}' AND MaKeHoach = '{1}'", 
+                            matv, 
+                            inputMaKH.Text
+                        );
+
                         db.getSqlDataAdapter(deleteQuery); // Thực hiện xóa
                         HienThiDSThanhVienDongQuy(inputMaKH.Text); // Cập nhật danh sách
-                        MessageBox.Show($"Xóa thành viên {hoTen} khỏi kế hoạch đóng quỹ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(
+                            string.Format("Xóa thành viên {0} khỏi kế hoạch đóng quỹ thành công!", hoTen), 
+                            "Thông báo", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Information
+                        );
                     }
                     else // Điều kiện không thỏa mãn
                     {
-                        MessageBox.Show($"Không thể xóa thành viên {hoTen}. Chỉ có thể xóa nếu NgayDong = NULL và TrangThai = 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(
+                            string.Format("Không thể xóa thành viên {0}. Chỉ có thể xóa nếu NgayDong = NULL và TrangThai = 0.", hoTen), 
+                            "Thông báo", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Warning
+                        );
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Đã xảy ra lỗi khi thực hiện xóa thành viên {hoTen}. Vui lòng thử lại.\nChi tiết lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        string.Format("Đã xảy ra lỗi khi thực hiện xóa thành viên {0}. Vui lòng thử lại.\nChi tiết lỗi: {1}", hoTen, ex.Message), 
+                        "Thông báo", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error
+                    );
                 }
             }
             else
