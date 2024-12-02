@@ -93,7 +93,7 @@ namespace QLHD_CLB
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            container(new FormSuKien());
+            container(new FormSuKien(this));
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)

@@ -95,6 +95,7 @@ namespace QLHD_CLB
 
             if (dt != null && dt.Rows.Count > 0)
             {
+                GlobalValue.Ma_NguoiDung = dt.Rows[0]["MaNguoiDung"].ToString();
                 GlobalValue.HoTen_NguoiDung = dt.Rows[0]["HoTen"].ToString();
                 GlobalValue.AnhDaiDien_NguoiDung = dt.Rows[0]["AnhDaiDien"].ToString();
                 Message.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
@@ -116,6 +117,11 @@ namespace QLHD_CLB
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

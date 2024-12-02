@@ -102,7 +102,7 @@ namespace QLHD_CLB
             dateTKNgayKT.Checked = false;
             dateNgayBD.Checked = false;
             dateNgayKT.Checked = false;
-
+            
         }
 
         private void grTimKiem_Click(object sender, EventArgs e)
@@ -415,6 +415,9 @@ namespace QLHD_CLB
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
+            txtMaSK.DataBindings.Clear();
+            txtMaSK.DataBindings.Add("Text", dgv.DataSource, "MaSuKien");
+            GlobalValue.MaSuKien = txtMaSK.Text;
             parentForm.container(new FormSuKien_ChiTiet(parentForm));
         }
 
