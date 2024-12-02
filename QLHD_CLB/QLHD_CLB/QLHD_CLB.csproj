@@ -53,41 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBanCLB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBanCLB.Designer.cs">
-      <DependentUpon>FormBanCLB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormChucVuCLB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormChucVuCLB.Designer.cs">
-      <DependentUpon>FormChucVuCLB.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDongQuy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDongQuy.Designer.cs">
-      <DependentUpon>FormDongQuy.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormGiaoDien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGiaoDien.Designer.cs">
       <DependentUpon>FormGiaoDien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormNguoiDungCLB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormNguoiDungCLB.Designer.cs">
-      <DependentUpon>FormNguoiDungCLB.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNhaTaiTro.cs">
       <SubType>Form</SubType>
@@ -113,18 +89,6 @@
     <Compile Include="FormSuKien_ChiTiet.Designer.cs">
       <DependentUpon>FormSuKien_ChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThanhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormThanhVien.Designer.cs">
-      <DependentUpon>FormThanhVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormThongKe.Designer.cs">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\DBConnect.cs" />
     <Compile Include="Model\GlobalValue.cs" />
     <Compile Include="Program.cs" />
@@ -134,23 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCauLacBoDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormBanCLB.resx">
-      <DependentUpon>FormBanCLB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormChucVuCLB.resx">
-      <DependentUpon>FormChucVuCLB.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDongQuy.resx">
-      <DependentUpon>FormDongQuy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormGiaoDien.resx">
       <DependentUpon>FormGiaoDien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormNguoiDungCLB.resx">
-      <DependentUpon>FormNguoiDungCLB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhaTaiTro.resx">
       <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
@@ -163,12 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuKien_ChiTiet.resx">
       <DependentUpon>FormSuKien_ChiTiet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormThanhVien.resx">
-      <DependentUpon>FormThanhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormThongKe.resx">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
