@@ -64,8 +64,9 @@ namespace QLHD_CLB
         {
             foreach (Control control in parent.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox)
                 {
+                    TextBox textBox = (TextBox)control;
                     textBox.Clear(); // Xóa nội dung TextBox
                 }
                 else if (control.HasChildren)
@@ -387,7 +388,8 @@ namespace QLHD_CLB
 
             if (!string.IsNullOrEmpty(tongtien))
             {
-                if (double.TryParse(tongtien, out double tmp))
+                double tmp;
+                if (double.TryParse(tongtien, out tmp))
                 {
                     string tmpStart = (tmp / 10).ToString().Replace(',', '.');
                     string tmpEnd = (tmp * 10).ToString().Replace(',', '.');
@@ -443,14 +445,16 @@ namespace QLHD_CLB
                 return;
             }
 
-            if (!double.TryParse(hienkim, out double hienKimValue) || hienKimValue < 0)
+            double hienKimValue;
+            if (!double.TryParse(hienkim, out hienKimValue) || hienKimValue < 0)
             {
                 MessageBox.Show("Hiện kim phải là một số không âm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHienKim.Focus();
                 return;
             }
 
-            if (!double.TryParse(tongtien, out double tongTienValue) || tongTienValue < 0)
+            double tongTienValue;
+            if (!double.TryParse(tongtien, out tongTienValue) || tongTienValue < 0)
             {
                 MessageBox.Show("Tổng tài trợ phải là một số không âm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTongTien.Focus();
@@ -517,14 +521,16 @@ namespace QLHD_CLB
                 return;
             }
 
-            if (!double.TryParse(hienkim, out double hienKimValue) || hienKimValue < 0)
+            double hienKimValue;
+            if (!double.TryParse(hienkim, out hienKimValue) || hienKimValue < 0)
             {
                 MessageBox.Show("Hiện kim phải là một số không âm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHienKim.Focus();
                 return;
             }
 
-            if (!double.TryParse(tongtien, out double tongTienValue) || tongTienValue < 0)
+            double tongTienValue;
+            if (!double.TryParse(tongtien, out tongTienValue) || tongTienValue < 0)
             {
                 MessageBox.Show("Tổng tài trợ phải là một số không âm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTongTien.Focus();
@@ -603,9 +609,10 @@ namespace QLHD_CLB
                 conditions.Add("HinhThucThanhToan = N'" + hinhttt + "'");
             }
 
+            double tmp;
             if (!string.IsNullOrEmpty(sotien))
             {
-                if (double.TryParse(sotien, out double tmp))
+                if (double.TryParse(sotien, out tmp))
                 {
                     string tmpStart = (tmp / 10).ToString().Replace(',', '.');
                     string tmpEnd = (tmp * 10).ToString().Replace(',', '.');
@@ -1067,7 +1074,7 @@ namespace QLHD_CLB
                 btnHuy_CTPC.Enabled = true;
                 dateNgayHT_CTPC.Checked = false;
                 dateNgayHT_CTPC.Value = DateTime.Now;
-                
+
             }
             else
             {
@@ -1367,6 +1374,11 @@ namespace QLHD_CLB
             SetControlsEnabledTrue(panel2);
             isEditPhanCong = false;
             LoadTabPhanCong();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

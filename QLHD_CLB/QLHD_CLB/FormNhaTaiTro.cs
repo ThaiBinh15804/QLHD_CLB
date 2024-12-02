@@ -41,12 +41,12 @@ namespace QLHD_CLB
             txtGhiChu.DataBindings.Clear();
 
             txtMaNTT.DataBindings.Add("Text", dt, "MaNhaTaiTro");
-            txtTenNTT.DataBindings.Add("Text",dt,"TenNhaTaiTro");
-            txtSDTNTT.DataBindings.Add("Text",dt,"SoDienThoai");
-            txtEmailNTT.DataBindings.Add("Text",dt,"Email");
-            txtDiaChiNTT.DataBindings.Add("Text",dt,"DiaChi");
-            txtGioiThieuNTT.DataBindings.Add("Text",dt,"GioiThieu");
-            txtGhiChu.DataBindings.Add("Text",dt,"GhiChu");
+            txtTenNTT.DataBindings.Add("Text", dt, "TenNhaTaiTro");
+            txtSDTNTT.DataBindings.Add("Text", dt, "SoDienThoai");
+            txtEmailNTT.DataBindings.Add("Text", dt, "Email");
+            txtDiaChiNTT.DataBindings.Add("Text", dt, "DiaChi");
+            txtGioiThieuNTT.DataBindings.Add("Text", dt, "GioiThieu");
+            txtGhiChu.DataBindings.Add("Text", dt, "GhiChu");
         }
 
         private void HuyLienKet()
@@ -63,8 +63,9 @@ namespace QLHD_CLB
         {
             foreach (Control control in parent.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox)
                 {
+                    TextBox textBox = (TextBox)control;
                     textBox.Clear(); // Xóa nội dung TextBox
                 }
                 else if (control.HasChildren)
@@ -169,7 +170,7 @@ namespace QLHD_CLB
             {
                 diachi = cbDiaChi.SelectedValue.ToString().ToLower();
             }
-            
+
             List<string> conditions = new List<string>();
 
             if (!string.IsNullOrEmpty(ten))
@@ -245,7 +246,7 @@ namespace QLHD_CLB
             if (k == 0)
             {
                 MessageBox.Show("Chỉnh sửa nhà tài trợ thất bại, hãy đảm bảo điền đủ các trường và đúng định dạng");
-            }    
+            }
             else
             {
                 MessageBox.Show("Chỉnh sửa nhà tài trợ thành công");
@@ -255,7 +256,7 @@ namespace QLHD_CLB
                 btnLuu.Enabled = false;
                 grNTT.Text = "Thêm thông tin nhà tài trợ";
                 FormNhaTaiTro_Load(sender, e);
-            }    
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

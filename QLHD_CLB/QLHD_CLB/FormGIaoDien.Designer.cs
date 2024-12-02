@@ -34,8 +34,6 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label_TenNguoiDung = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel_container = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel_top = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,14 +58,16 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.Message = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2Panel_container = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             this.guna2Panel_top.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel_sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -121,28 +121,9 @@
             this.label_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_TenNguoiDung.Location = new System.Drawing.Point(95, 16);
             this.label_TenNguoiDung.Name = "label_TenNguoiDung";
-            this.label_TenNguoiDung.Size = new System.Drawing.Size(92, 18);
+            this.label_TenNguoiDung.Size = new System.Drawing.Size(119, 24);
             this.label_TenNguoiDung.TabIndex = 11;
             this.label_TenNguoiDung.Text = "Thuận Phạm";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.guna2Panel_container);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(334, 73);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1373, 813);
-            this.guna2Panel2.TabIndex = 5;
-            // 
-            // guna2Panel_container
-            // 
-            this.guna2Panel_container.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel_container.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel_container.Name = "guna2Panel_container";
-            this.guna2Panel_container.Size = new System.Drawing.Size(1373, 813);
-            this.guna2Panel_container.TabIndex = 0;
-            this.guna2Panel_container.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel_container_Paint);
             // 
             // guna2DragControl1
             // 
@@ -300,7 +281,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(183)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(114, 34);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(126, 34);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 43);
             this.guna2HtmlLabel1.TabIndex = 10;
             this.guna2HtmlLabel1.Text = "CLUB \r\nHUIT";
             this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
@@ -557,6 +538,26 @@
             this.Message.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.Message.Text = null;
             // 
+            // guna2Panel_container
+            // 
+            this.guna2Panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel_container.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel_container.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel_container.Name = "guna2Panel_container";
+            this.guna2Panel_container.Size = new System.Drawing.Size(1373, 813);
+            this.guna2Panel_container.TabIndex = 0;
+            this.guna2Panel_container.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel_container_Paint);
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.guna2Panel_container);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(334, 73);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1373, 813);
+            this.guna2Panel2.TabIndex = 5;
+            // 
             // FormGiaoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -574,13 +575,13 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel_top.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel_sidebar.ResumeLayout(false);
             this.guna2Panel_sidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -601,8 +602,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel_container;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel_top;
@@ -617,5 +616,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton ForwardForm;
         private Guna.UI2.WinForms.Guna2ImageButton BackForm;
         private Guna.UI2.WinForms.Guna2MessageDialog Message;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel_container;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

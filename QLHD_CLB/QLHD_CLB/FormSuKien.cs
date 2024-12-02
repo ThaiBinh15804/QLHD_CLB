@@ -31,8 +31,9 @@ namespace QLHD_CLB
         {
             foreach (Control control in parent.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox)
                 {
+                    TextBox textBox = (TextBox)control;
                     textBox.Clear(); // Xóa nội dung TextBox
                 }
                 else if (control.HasChildren)
@@ -102,7 +103,7 @@ namespace QLHD_CLB
             dateTKNgayKT.Checked = false;
             dateNgayBD.Checked = false;
             dateNgayKT.Checked = false;
-            
+
         }
 
         private void grTimKiem_Click(object sender, EventArgs e)
@@ -190,7 +191,8 @@ namespace QLHD_CLB
                 txtDuChi.Text = "0"; // Mặc định giá trị là 0 nếu trống
             }
 
-            if (!double.TryParse(txtDuChi.Text, out double duchi))
+            double duchi;
+            if (!double.TryParse(txtDuChi.Text, out duchi))
             {
                 MessageBox.Show("Vui lòng nhập một giá trị số hợp lệ cho Ngân sách dự chi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDuChi.Focus();
@@ -321,7 +323,8 @@ namespace QLHD_CLB
                 txtDuChi.Text = "0"; // Mặc định giá trị là 0 nếu trống
             }
 
-            if (!double.TryParse(txtDuChi.Text, out double duchi))
+            double duchi;
+            if (!double.TryParse(txtDuChi.Text, out duchi))
             {
                 MessageBox.Show("Vui lòng nhập một giá trị số hợp lệ cho Ngân sách dự chi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDuChi.Focus();
