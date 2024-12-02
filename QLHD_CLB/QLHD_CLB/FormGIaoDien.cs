@@ -106,11 +106,6 @@ namespace QLHD_CLB
             container(new FormDongQuy());
         }
 
-        private void guna2Panel_sidebar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             FormDangNhap formDangNhap = new FormDangNhap();

@@ -10,7 +10,7 @@ namespace QLHD_CLB.Model
 {
     class DBConnect
     {
-        string constr = "Data Source = PHAMTHUAN\\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+        string constr = @"Data Source = PHAMTHUAN\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
         public SqlConnection con { get; set; }
 
         public DBConnect()
@@ -67,7 +67,5 @@ namespace QLHD_CLB.Model
             con.Close();
             return k;
         }
-
-
     }
 }
