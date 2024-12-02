@@ -368,9 +368,9 @@ namespace QLHD_CLB
 
         private void FormSuKien_ChiTiet_Load(object sender, EventArgs e)
         {
-            //LoadTabThongTin();
-            //LoadTabTaiTro();
-            //LoadTabChiTieu();
+            LoadTabThongTin();
+            LoadTabTaiTro();
+            LoadTabChiTieu();
             LoadTabPhanCong();
         }
 

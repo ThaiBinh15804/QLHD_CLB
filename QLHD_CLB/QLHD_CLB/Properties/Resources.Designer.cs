@@ -93,6 +93,16 @@ namespace QLHD_CLB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_forward_38 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-forward-38", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_forward_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-forward-50", resourceCulture);
@@ -106,6 +116,16 @@ namespace QLHD_CLB.Properties {
         internal static System.Drawing.Bitmap icons8_reply_arrow_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reply-arrow-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reply_arrow_38 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reply-arrow-38", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
