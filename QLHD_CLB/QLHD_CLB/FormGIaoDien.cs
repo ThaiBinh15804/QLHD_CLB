@@ -79,7 +79,7 @@ namespace QLHD_CLB
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            container(new FormChucVuCLB());
+            container(new formcv());
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
