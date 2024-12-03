@@ -163,6 +163,10 @@ namespace QLHD_CLB
             }
         }
 
-
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(this);
+            container(formDoiMatKhau);
+        }
     }
 }

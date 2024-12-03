@@ -47,6 +47,7 @@ namespace QLHD_CLB
 
         private void LienKetDuLieu(DataTable dt)
         {
+            txtMaSK.DataBindings.Clear();
             txtTenSK.DataBindings.Clear();
             txtMoTa.DataBindings.Clear();
             txtDuChi.DataBindings.Clear();

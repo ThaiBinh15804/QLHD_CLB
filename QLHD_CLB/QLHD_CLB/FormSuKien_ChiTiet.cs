@@ -1380,5 +1380,22 @@ namespace QLHD_CLB
         {
 
         }
+
+        private void picHoaDon_CT_Click(object sender, EventArgs e)
+        {
+            Image imageToShow = picHoaDon_CT.Image;
+
+            if (imageToShow == null)
+            {
+                MessageBox.Show("Không có ảnh nào để hiển thị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
+            else
+            {
+                FormXemAnh formXemAnh = new FormXemAnh(imageToShow);
+                formXemAnh.ShowDialog();
+            }    
+
+        }
     }
 }

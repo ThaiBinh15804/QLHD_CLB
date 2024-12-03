@@ -59,6 +59,7 @@
             this.Message = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel_container = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel_top.SuspendLayout();
@@ -72,6 +73,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.linkLabel1);
             this.guna2Panel1.Controls.Add(this.guna2Button9);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Controls.Add(this.label_TenNguoiDung);
@@ -94,7 +96,7 @@
             this.guna2Button9.FillColor = System.Drawing.Color.White;
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button9.Location = new System.Drawing.Point(98, 46);
+            this.guna2Button9.Location = new System.Drawing.Point(100, 50);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.Size = new System.Drawing.Size(106, 36);
             this.guna2Button9.TabIndex = 12;
@@ -117,10 +119,10 @@
             // 
             this.label_TenNguoiDung.AutoSize = true;
             this.label_TenNguoiDung.BackColor = System.Drawing.Color.White;
-            this.label_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TenNguoiDung.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_TenNguoiDung.Location = new System.Drawing.Point(95, 16);
             this.label_TenNguoiDung.Name = "label_TenNguoiDung";
-            this.label_TenNguoiDung.Size = new System.Drawing.Size(113, 22);
+            this.label_TenNguoiDung.Size = new System.Drawing.Size(110, 25);
             this.label_TenNguoiDung.TabIndex = 11;
             this.label_TenNguoiDung.Text = "Thuận Phạm";
             // 
@@ -531,6 +533,19 @@
             this.guna2Panel2.Size = new System.Drawing.Size(1373, 813);
             this.guna2Panel2.TabIndex = 5;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(213, 21);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 20);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Đổi mật khẩu";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FormGiaoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -591,5 +606,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog Message;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel_container;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
