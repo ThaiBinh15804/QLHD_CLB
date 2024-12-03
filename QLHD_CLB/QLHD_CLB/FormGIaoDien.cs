@@ -51,7 +51,7 @@ namespace QLHD_CLB
 
         private void FormGIaoDien_Load(object sender, EventArgs e)
         {
-            container(new FormSuKien(this));
+            container(new FormThongKe());
             label_TenNguoiDung.Text = GlobalValue.HoTen_NguoiDung;
 
             string relativePath = @"HinhAnh\AnhDaiDien\"; // Đường dẫn tương đối từ thư mục gốc dự án
@@ -79,7 +79,7 @@ namespace QLHD_CLB
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            container(new FormChucVuCLB());
+            container(new formcv());
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
