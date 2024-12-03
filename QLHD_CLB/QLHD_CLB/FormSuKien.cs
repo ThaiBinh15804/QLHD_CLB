@@ -457,5 +457,10 @@ namespace QLHD_CLB
             }
             HuyLienKet();
         }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -15,9 +15,17 @@ namespace QLHD_CLB
 {
     public partial class FormThongKe : Form
     {
+        private FormGiaoDien parent;
+
         public FormThongKe()
         {
             InitializeComponent();
+        }
+
+        public FormThongKe(FormGiaoDien _parentForm)
+        {
+            InitializeComponent();
+            parent = _parentForm;
         }
 
         DBConnect db = new DBConnect();
@@ -53,7 +61,7 @@ namespace QLHD_CLB
         private void LoadDataToGunaChart()
         {
             // Kết nối tới SQL Server
-            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string connectionString = @"Data Source = PHAMTHUAN\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
             string query = @"
         SELECT 
             FORMAT(NgayThucHien, 'yyyy-MM') AS Thang, 
@@ -141,30 +149,18 @@ namespace QLHD_CLB
 
         private void HienThiThanhVienTheoThang()
         {
-            string query = "SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', ThanhVien.SoDienThoai as N'Số điện thoại', ThanhVien.DiaChi as N'Địa chỉ', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') = (SELECT TOP 1 FORMAT(NgayThamGia, 'yyyy-MM') FROM ThanhVien WHERE NgayThamGia >= DATEADD(MONTH, -6, GETDATE()) ORDER BY NgayThamGia DESC);";
+            string query = "SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') = (SELECT TOP 1 FORMAT(NgayThamGia, 'yyyy-MM') FROM ThanhVien WHERE NgayThamGia >= DATEADD(MONTH, -6, GETDATE()) ORDER BY NgayThamGia DESC);";
             DataTable dt = db.getSqlDataAdapter(query);
             dtg_thongkeThanhVienThamGia.DataSource = dt;
 
-            // Thiết lập độ rộng cho các cột
-            dtg_thongkeThanhVienThamGia.Columns["Họ tên"].Width = 180;
-            dtg_thongkeThanhVienThamGia.Columns["Giới tính"].Width = 120;
-            dtg_thongkeThanhVienThamGia.Columns["Số điện thoại"].Width = 160;
-            dtg_thongkeThanhVienThamGia.Columns["Địa chỉ"].Width = 150;
-            dtg_thongkeThanhVienThamGia.Columns["Thuộc ban"].Width = 200;
         }
 
         private void LocHienThiThanhVienTheoThang(string thangNam)
         {
-            string query = " SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', ThanhVien.SoDienThoai as N'Số điện thoại', ThanhVien.DiaChi as N'Địa chỉ', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') ='" + thangNam + "'";
+            string query = " SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') ='" + thangNam + "'";
             DataTable dt = db.getSqlDataAdapter(query);
             dtg_thongkeThanhVienThamGia.DataSource = dt;
 
-            // Thiết lập độ rộng cho các cột
-            dtg_thongkeThanhVienThamGia.Columns["Họ tên"].Width = 180;
-            dtg_thongkeThanhVienThamGia.Columns["Giới tính"].Width = 120;
-            dtg_thongkeThanhVienThamGia.Columns["Số điện thoại"].Width = 160;
-            dtg_thongkeThanhVienThamGia.Columns["Địa chỉ"].Width = 150;
-            dtg_thongkeThanhVienThamGia.Columns["Thuộc ban"].Width = 200;
         }
 
         private void comboBoxlocThanhVienTheoThang_SelectedIndexChanged(object sender, EventArgs e)
@@ -302,6 +298,11 @@ namespace QLHD_CLB
             ThongKeGioiTinh();
             ThongKeSuKienSapDienRaHoacDangDienRa();
             ThongKeDongQuy();
+        }
+
+        private void btn_tk1_Click(object sender, EventArgs e)
+        {
+            parent.container(new tk1());
         }
     }
 }
