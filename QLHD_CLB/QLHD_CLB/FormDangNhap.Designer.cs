@@ -55,7 +55,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(508, 117);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(212, 15);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(243, 19);
             this.guna2HtmlLabel1.TabIndex = 23;
             this.guna2HtmlLabel1.Text = "Phầm mềm quản lý hoạt động câu lạc bộ";
             // 
@@ -148,7 +148,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(500, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 32);
+            this.label1.Size = new System.Drawing.Size(303, 41);
             this.label1.TabIndex = 15;
             this.label1.Text = "Chào mừng đến CLB";
             // 

@@ -304,5 +304,12 @@ namespace QLHD_CLB
             ThongKeSuKienSapDienRaHoacDangDienRa();
             ThongKeDongQuy();
         }
+
+        private void btnThongKe1_Click(object sender, EventArgs e)
+        {
+            tk1 p = new tk1();
+            p.Show();
+            this.Hide();
+        }
     }
 }
