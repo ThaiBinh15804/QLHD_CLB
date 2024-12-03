@@ -185,13 +185,14 @@ namespace QLHD_CLB
         private void btnSua_Click(object sender, EventArgs e)
         {
             flat = true;
-            
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             flat = false;
 
+            // Làm mới các ô nhập liệu
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
             string maChucVu = SinhMaChucVu();
@@ -199,7 +200,27 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu;
             }
+
+            // Làm mới DataGridView (hiển thị toàn bộ dữ liệu)
+            string query = "SELECT * FROM ChucVu"; // Truy vấn để lấy toàn bộ dữ liệu từ bảng ChucVu
+            try
+            {
+                DataTable dt = db.getSqlDataAdapter(query); // Thực thi truy vấn
+                dgvDSChucVu.DataSource = dt; // Gán dữ liệu cho DataGridView
+
+                // Nếu không có dữ liệu, hiển thị thông báo
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để hiển thị.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi làm mới dữ liệu: " + ex.Message);
+            }
+            btnThem.Enabled = true;
         }
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -241,6 +262,7 @@ namespace QLHD_CLB
             }
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
+            btnThem.Enabled = true;
         }
 
 
