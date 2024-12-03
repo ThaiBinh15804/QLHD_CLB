@@ -253,7 +253,7 @@ namespace QLHD_CLB
             try
             {
                 connection.Open();
-                if (isXoaBan) 
+                if (isXoaBan)
                 {
                     bool coNguoiDung = true; // Biến kiểm tra có người dùng trong bàn hay không
                     while (coNguoiDung)
@@ -298,10 +298,9 @@ namespace QLHD_CLB
                         cmd.Parameters.AddWithValue("@MaBan", maBan);
                         cmd.ExecuteNonQuery();
                     }
-
                     MessageBox.Show("Xóa ban thành công.");
                 }
-                else 
+                else
                 {
                     if (string.IsNullOrEmpty(maChucVu) || string.IsNullOrEmpty(manguoidung))
                     {

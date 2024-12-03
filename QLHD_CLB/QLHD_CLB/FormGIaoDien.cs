@@ -103,7 +103,7 @@ namespace QLHD_CLB
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            container(new FormDongQuy());
+            container(new FormDongQuy(this));
         }
 
         private void guna2Panel_sidebar_Paint(object sender, PaintEventArgs e)
@@ -163,6 +163,10 @@ namespace QLHD_CLB
             }
         }
 
-
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(this);
+            container(formDoiMatKhau);
+        }
     }
 }

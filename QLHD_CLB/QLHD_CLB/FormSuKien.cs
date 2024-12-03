@@ -47,6 +47,7 @@ namespace QLHD_CLB
 
         private void LienKetDuLieu(DataTable dt)
         {
+            txtMaSK.DataBindings.Clear();
             txtTenSK.DataBindings.Clear();
             txtMoTa.DataBindings.Clear();
             txtDuChi.DataBindings.Clear();
@@ -67,8 +68,6 @@ namespace QLHD_CLB
             dateNgayKT.DataBindings.Add("Value", dt, "NgayKetThuc");
             dateNgayKT.Checked = true;
 
-            gioBD.Text = dateNgayBD.Value.ToString("HH:mm");
-            gioKT.Text = dateNgayKT.Value.ToString("HH:mm");
         }
 
         private void HuyLienKet()
@@ -437,25 +436,51 @@ namespace QLHD_CLB
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (grThem.Text != "Sửa sự kiện")
+            {
+                MessageBox.Show("Vui lòng chọn vào nút sửa và click vào sự kiện muốn xoá.");
+                return;
+            }
+
             txtMaSK.DataBindings.Clear();
             DataTable dt = (DataTable)dgv.DataSource;
             LienKetDuLieu(dt);
             string sql = "DELETE FROM SuKien WHERE MaSuKien = '" + txtMaSK.Text + "'";
             DBConnect data = new DBConnect();
-            int k = data.getNonQuery(sql);
 
-            if (k == 0)
+            try
             {
-                MessageBox.Show("Xóa sự kiện thất bại");
-            }
-            else
-            {
-                MessageBox.Show("Xóa sự kiện thành công");
-                ClearAllTextBoxes(grThem);
+                int k = data.getNonQuery(sql);
+
+                if (k == 0)
+                {
+                    MessageBox.Show("Xóa sự kiện thất bại");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa sự kiện thành công");
+                    ClearAllTextBoxes(grThem);
+                    HuyLienKet();
+                    FormSuKien_Load(sender, e);
+                }
                 HuyLienKet();
-                FormSuKien_Load(sender, e);
             }
-            HuyLienKet();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sự kiện đã được gán các giá trị khác như tài trợ, tham gia,... nên không thế xoá!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void dateNgayBD_ValueChanged(object sender, EventArgs e)
+        {
+            gioBD.Text = dateNgayBD.Value.ToString("HH:mm");
+
+        }
+
+        private void dateNgayKT_ValueChanged(object sender, EventArgs e)
+        {
+            gioKT.Text = dateNgayKT.Value.ToString("HH:mm");
         }
     }
 }

@@ -584,5 +584,21 @@ namespace QLHD_CLB
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Image imageToShow = pictureBox1.Image;
+
+            if (imageToShow == null)
+            {
+                MessageBox.Show("Không có ảnh nào để hiển thị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                FormXemAnh formXemAnh = new FormXemAnh(imageToShow);
+                formXemAnh.ShowDialog();
+            }
+        }
     }
 }
