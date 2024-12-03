@@ -462,7 +462,7 @@
             this.btnHuy.FillColor = System.Drawing.Color.White;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnHuy.Location = new System.Drawing.Point(638, 178);
+            this.btnHuy.Location = new System.Drawing.Point(638, 153);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(123, 50);
             this.btnHuy.TabIndex = 1;
@@ -509,7 +509,7 @@
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(638, 124);
+            this.btnLuu.Location = new System.Drawing.Point(638, 72);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(123, 48);
             this.btnLuu.TabIndex = 1;
@@ -529,7 +529,7 @@
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(638, 124);
+            this.btnThem.Location = new System.Drawing.Point(638, 72);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(123, 48);
             this.btnThem.TabIndex = 1;
@@ -645,6 +645,7 @@
             this.dateNgayBD.Size = new System.Drawing.Size(208, 49);
             this.dateNgayBD.TabIndex = 1;
             this.dateNgayBD.Value = new System.DateTime(2024, 11, 30, 16, 11, 59, 101);
+            this.dateNgayBD.ValueChanged += new System.EventHandler(this.dateNgayBD_ValueChanged);
             // 
             // dateNgayKT
             // 
@@ -663,6 +664,7 @@
             this.dateNgayKT.Size = new System.Drawing.Size(208, 49);
             this.dateNgayKT.TabIndex = 1;
             this.dateNgayKT.Value = new System.DateTime(2024, 11, 30, 16, 11, 59, 101);
+            this.dateNgayKT.ValueChanged += new System.EventHandler(this.dateNgayKT_ValueChanged);
             // 
             // btnXoa
             // 

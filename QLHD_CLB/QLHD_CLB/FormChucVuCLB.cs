@@ -138,8 +138,19 @@ namespace QLHD_CLB
                 return;
             }
 
-            // Câu lệnh SQL để xóa chức vụ
-            string xoa = "delete from ChucVu where(MaChucVu='" + txtMaChucVu.Text.Trim() + "' or TenChucVu=N'" + txtTenChucVu.Text.Trim() + "')";
+            // Kiểm tra xem chức vụ có đang được sử dụng trong bảng DamnhiemChucVu hay không
+            string kiemTra = "SELECT COUNT(*) FROM DamNhiem WHERE MaChucVu = '" + txtMaChucVu.Text.Trim() + "' OR MaNguoiDung = N'" + txtTenChucVu.Text.Trim() + "'";
+
+            int count = Convert.ToInt32(db.getScalar(kiemTra));  // Thực thi câu lệnh SELECT để kiểm tra số lượng bản ghi
+
+            if (count > 0) // Nếu có dữ liệu trong bảng DamnhiemChucVu thì không cho phép xóa
+            {
+                MessageBox.Show("Không thể xóa chức vụ này vì đang có người dùng thuộc về chức vụ này.");
+                return;
+            }
+
+            // Nếu không có dữ liệu trong bảng DamnhiemChucVu, tiến hành xóa chức vụ
+            string xoa = "DELETE FROM ChucVu WHERE MaChucVu = '" + txtMaChucVu.Text.Trim() + "' OR TenChucVu = N'" + txtTenChucVu.Text.Trim() + "'";
 
             try
             {
@@ -167,20 +178,21 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu;
             }
-
         }
+
 
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             flat = true;
-            
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             flat = false;
 
+            // Làm mới các ô nhập liệu
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
             string maChucVu = SinhMaChucVu();
@@ -188,7 +200,27 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu;
             }
+
+            // Làm mới DataGridView (hiển thị toàn bộ dữ liệu)
+            string query = "SELECT * FROM ChucVu"; // Truy vấn để lấy toàn bộ dữ liệu từ bảng ChucVu
+            try
+            {
+                DataTable dt = db.getSqlDataAdapter(query); // Thực thi truy vấn
+                dgvDSChucVu.DataSource = dt; // Gán dữ liệu cho DataGridView
+
+                // Nếu không có dữ liệu, hiển thị thông báo
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để hiển thị.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi làm mới dữ liệu: " + ex.Message);
+            }
+            btnThem.Enabled = true;
         }
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -230,6 +262,7 @@ namespace QLHD_CLB
             }
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
+            btnThem.Enabled = true;
         }
 
 

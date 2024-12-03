@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLHD_CLB.Model;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace QLHD_CLB
 {
     public partial class FormBanCLB : Form
     {
-        
+        private bool flat = false;
+
         DBConnect db = new DBConnect();
+
         public FormBanCLB()
         {
             InitializeComponent();
@@ -197,6 +200,9 @@ namespace QLHD_CLB
         private bool isXoaBan = false;
         private void tv_dsban_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            if (!flat)
+                return;
+
             TreeNode selectedNode = e.Node;
 
             if (selectedNode.Tag != null)
@@ -247,8 +253,30 @@ namespace QLHD_CLB
             try
             {
                 connection.Open();
-                if (isXoaBan) 
+                if (isXoaBan)
                 {
+                    bool coNguoiDung = true; // Biến kiểm tra có người dùng trong bàn hay không
+                    while (coNguoiDung)
+                    {
+                        // Kiểm tra xem trong bàn có người dùng thuộc chức vụ nào không
+                        string kiemTraNguoiDung = "SELECT COUNT(*) FROM DamNhiem WHERE MaBan = @MaBan AND MaChucVu IS NOT NULL";
+                        using (SqlCommand cmd = new SqlCommand(kiemTraNguoiDung, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@MaBan", maBan);
+                            int soLuongNguoiDung = (int)cmd.ExecuteScalar();
+
+                            if (soLuongNguoiDung > 0) // Nếu có người dùng trong bàn này, không cho phép xóa
+                            {
+                                MessageBox.Show("Không thể xóa ban vì có người dùng thuộc chức vụ trong ban này.");
+                                coNguoiDung = false; // Thoát khỏi vòng lặp
+                                return; // Dừng lại ở đây không thực hiện xóa bàn
+                            }
+                            else
+                            {
+                                coNguoiDung = false;
+                            }
+                        }
+                    }
                     string kiemTraDamNhiem = "SELECT COUNT(*) FROM DamNhiem WHERE MaBan = @MaBan";
                     using (SqlCommand cmd = new SqlCommand(kiemTraDamNhiem, connection))
                     {
@@ -270,10 +298,9 @@ namespace QLHD_CLB
                         cmd.Parameters.AddWithValue("@MaBan", maBan);
                         cmd.ExecuteNonQuery();
                     }
-
                     MessageBox.Show("Xóa ban thành công.");
                 }
-                else 
+                else
                 {
                     if (string.IsNullOrEmpty(maChucVu) || string.IsNullOrEmpty(manguoidung))
                     {
@@ -317,7 +344,9 @@ namespace QLHD_CLB
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            flat=true;
             cbb_HoTen.Enabled = true;
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -332,10 +361,16 @@ namespace QLHD_CLB
             {
                 txtMaBan.Text = maBan;
             }
+            btnThem.Enabled = true;
         }
 
         private void tv_dsban_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            if (!flat)
+            {
+                return;
+            }
+
             TreeNode tn = e.Node;
             if (tn.Parent == null)  
             {
@@ -490,6 +525,7 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
             }
+            btnThem.Enabled = true;
         }
 
 
