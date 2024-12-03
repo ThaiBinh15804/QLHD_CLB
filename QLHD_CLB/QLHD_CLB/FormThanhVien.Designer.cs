@@ -100,7 +100,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(912, 1000);
+            this.panel2.Size = new System.Drawing.Size(891, 1000);
             this.panel2.TabIndex = 0;
             // 
             // hScrollBar1
@@ -240,7 +240,7 @@
             this.dtg_hdthamgia.RowHeadersVisible = false;
             this.dtg_hdthamgia.RowHeadersWidth = 40;
             this.dtg_hdthamgia.RowTemplate.Height = 40;
-            this.dtg_hdthamgia.Size = new System.Drawing.Size(467, 387);
+            this.dtg_hdthamgia.Size = new System.Drawing.Size(446, 387);
             this.dtg_hdthamgia.TabIndex = 0;
             this.dtg_hdthamgia.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_hdthamgia.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -275,7 +275,7 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(445, 429);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(467, 40);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(446, 40);
             this.guna2GroupBox2.TabIndex = 25;
             this.guna2GroupBox2.Text = "Hoạt động tham gia";
             // 
@@ -311,7 +311,7 @@
             this.dtg_DSTV.RowHeadersVisible = false;
             this.dtg_DSTV.RowHeadersWidth = 51;
             this.dtg_DSTV.RowTemplate.Height = 40;
-            this.dtg_DSTV.Size = new System.Drawing.Size(896, 306);
+            this.dtg_DSTV.Size = new System.Drawing.Size(875, 306);
             this.dtg_DSTV.TabIndex = 17;
             this.dtg_DSTV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_DSTV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -615,7 +615,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(595, 3);
+            this.label1.Location = new System.Drawing.Point(574, 3);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.label1.Size = new System.Drawing.Size(72, 41);
@@ -634,7 +634,7 @@
             this.comboBox_locBan.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.comboBox_locBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_locBan.ItemHeight = 30;
-            this.comboBox_locBan.Location = new System.Drawing.Point(670, 8);
+            this.comboBox_locBan.Location = new System.Drawing.Point(649, 8);
             this.comboBox_locBan.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox_locBan.Name = "comboBox_locBan";
             this.comboBox_locBan.Size = new System.Drawing.Size(242, 36);
@@ -671,7 +671,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(16, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(896, 52);
+            this.panel3.Size = new System.Drawing.Size(875, 52);
             this.panel3.TabIndex = 15;
             // 
             // label2
@@ -714,7 +714,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 1000);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(891, 1000);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // guna2MessageDialog1
