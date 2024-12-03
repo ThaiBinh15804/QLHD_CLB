@@ -124,6 +124,8 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu2;
             }
+            this.txtTenChucVu.Clear();
+            this.txtMoTa.Clear();
         }
 
 
@@ -200,11 +202,6 @@ namespace QLHD_CLB
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin Tên Chức Vụ và Mô Tả.");
                 return;
             }
-            if (!KTMaChucVu(maChucVu)) 
-            {
-                MessageBox.Show("Mã Chức Vụ không tồn tại. Không thể cập nhật.");
-                return;
-            }
 
             try
             {
@@ -231,6 +228,8 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu;
             }
+            this.txtTenChucVu.Clear();
+            this.txtMoTa.Clear();
         }
 
 

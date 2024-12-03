@@ -14,6 +14,7 @@ namespace QLHD_CLB
 {
     public partial class FormBanCLB : Form
     {
+        
         DBConnect db = new DBConnect();
         public FormBanCLB()
         {
@@ -22,42 +23,65 @@ namespace QLHD_CLB
 
         public void HienThiDSBan()
         {
-            tv_dsban.Nodes.Clear();
+            tv_dsban.Nodes.Clear();  // Xóa hết các node cũ trong TreeView
+
             string ds = @"
-        select b.MaBan, b.TenBan, b.MoTa, c.MaChucVu, c.TenChucVu, n.HoTen 
-        from Ban b
-        left join DamNhiem d on b.MaBan = d.MaBan
-        left join ChucVu c on c.MaChucVu = d.MaChucVu
-        left join NguoiDung n on n.MaNguoiDung = d.MaNguoiDung";
-            DataTable dt = db.getSqlDataAdapter(ds);  
-            string chucvuQuery = "select MaChucVu, TenChucVu from ChucVu";  
+    select b.MaBan, b.TenBan, b.MoTa, c.MaChucVu, c.TenChucVu, n.HoTen 
+    from Ban b
+    left join DamNhiem d on b.MaBan = d.MaBan
+    left join ChucVu c on c.MaChucVu = d.MaChucVu
+    left join NguoiDung n on n.MaNguoiDung = d.MaNguoiDung";
+            DataTable dt = db.getSqlDataAdapter(ds);
+
+            string chucvuQuery = "select MaChucVu, TenChucVu from ChucVu";
             DataTable chucvuTable = db.getSqlDataAdapter(chucvuQuery);
+
+            // Duyệt qua từng dòng dữ liệu của Ban
             foreach (DataRow dr in dt.Rows)
             {
                 string maban = dr["MaBan"].ToString();
                 string tenban = dr["TenBan"].ToString();
                 string mota = dr["MoTa"].ToString();
+
+                // Kiểm tra xem node của bàn này đã tồn tại chưa
                 TreeNode existingNode = tv_dsban.Nodes.Cast<TreeNode>().FirstOrDefault(t => t.Tag != null && ((Tuple<string, string, bool>)t.Tag).Item1 == maban);
+
                 if (existingNode == null)
                 {
+                    // Nếu chưa có thì tạo mới node cho bàn
                     existingNode = new TreeNode(tenban);
-                    existingNode.Tag = new Tuple<string, string, bool>(maban, mota, true); 
+                    existingNode.Tag = new Tuple<string, string, bool>(maban, mota, true);
                     tv_dsban.Nodes.Add(existingNode);
                 }
+
+                // Duyệt qua các chức vụ
                 foreach (DataRow chucvuRow in chucvuTable.Rows)
                 {
                     string chucvu = chucvuRow["TenChucVu"].ToString();
-                    string hoten = "Chưa gán vai trò"; 
+                    string hoten = "Chưa gán vai trò";
+
+                    // Kiểm tra xem có người dùng nào đã được gán vào chức vụ này cho bàn hiện tại không
                     DataRow[] rows = dt.Select(string.Format("MaBan = '{0}' AND TenChucVu = '{1}'", maban, chucvu));
+
                     if (rows.Length > 0 && rows[0]["HoTen"] != DBNull.Value)
                     {
                         hoten = rows[0]["HoTen"].ToString();
                     }
+
                     string chucvu_hoten = chucvu + " - " + hoten;
-                    existingNode.Nodes.Add(new TreeNode(chucvu_hoten) { Tag = new Tuple<string, string, bool>(maban, mota, false) }); // Node con, cờ = false
+
+                    // Kiểm tra xem node con cho chức vụ này đã tồn tại chưa
+                    bool nodeExists = existingNode.Nodes.Cast<TreeNode>().Any(n => n.Text == chucvu_hoten);
+
+                    if (!nodeExists)
+                    {
+                        // Nếu chưa tồn tại, thêm node con cho chức vụ
+                        existingNode.Nodes.Add(new TreeNode(chucvu_hoten) { Tag = new Tuple<string, string, bool>(maban, mota, false) });
+                    }
                 }
             }
         }
+
 
 
         private void HienThiDS_ChucVu()
@@ -85,7 +109,6 @@ namespace QLHD_CLB
 
         private string SinhMaBan()
         {
-            // Câu lệnh SQL để lấy mã bàn lớn nhất
             string query = "SELECT MAX(CAST(SUBSTRING(MaBan, 2, LEN(MaBan)) AS INT)) FROM Ban";
 
             try
@@ -164,6 +187,11 @@ namespace QLHD_CLB
             {
                 txtMaBan.Text = maBan;
             }
+            this.txtTenBan.Clear();
+            this.txtMoTa.Clear();
+            this.txtChucVu.Clear();
+            this.cbb_HoTen.SelectedItem = null;
+            cbb_HoTen.Enabled = false;
         }
 
         private bool isXoaBan = false;
@@ -261,7 +289,7 @@ namespace QLHD_CLB
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Xóa liên kết thành công.");
+                    MessageBox.Show("Xóa người dùng thuộc chức vụ thành công.");
                 }
                 this.txtMaBan.Clear();
                 this.txtTenBan.Clear();
@@ -399,15 +427,10 @@ namespace QLHD_CLB
             string hoten = cbb_HoTen.SelectedItem != null ? (cbb_HoTen.SelectedItem as DataRowView)["HoTen"].ToString().Trim() : null;
             string manguoidung = cbb_HoTen.SelectedValue != null ? cbb_HoTen.SelectedValue.ToString().Trim() : null;
             string maChucVu = GetMaChucVu(chucVu);
+
             if (string.IsNullOrEmpty(maBan) || string.IsNullOrEmpty(tenBan) || string.IsNullOrEmpty(moTa))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin Mã Ban, Tên Ban và Mô Tả Ban.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(maChucVu) || string.IsNullOrEmpty(manguoidung))
-            {
-                MessageBox.Show("Vui lòng chọn chức vụ và người dùng.");
                 return;
             }
 
@@ -429,19 +452,24 @@ namespace QLHD_CLB
 
                 if (countChucVuExist > 0)
                 {
-                    // Nếu đã có người dùng, thì chỉ cần cập nhật lại MaNguoiDung (người dùng mới)
-                    string updateChucVuCu = "UPDATE DamNhiem SET MaNguoiDung = N'" + manguoidung + "' WHERE MaBan = N'" + maBan + "' AND MaChucVu = N'" + maChucVu + "'";
-                    int resultUpdate = db.getNonQuery(updateChucVuCu);
+                    // Nếu đã có người dùng, chỉ cần kiểm tra nếu MaNguoiDung thay đổi thì mới thực hiện cập nhật
+                    string currentMaNguoiDung = db.getScalar("SELECT MaNguoiDung FROM DamNhiem WHERE MaBan = N'" + maBan + "' AND MaChucVu = N'" + maChucVu + "'").ToString();
 
-                    if (resultUpdate == 0)
+                    if (currentMaNguoiDung != manguoidung) // Nếu người dùng mới khác với người dùng cũ
                     {
-                        MessageBox.Show("Cập nhật chức vụ không thành công.");
-                        return;
+                        string updateChucVuCu = "UPDATE DamNhiem SET MaNguoiDung = N'" + manguoidung + "' WHERE MaBan = N'" + maBan + "' AND MaChucVu = N'" + maChucVu + "'";
+                        int resultUpdate = db.getNonQuery(updateChucVuCu);
+
+                        if (resultUpdate == 0)
+                        {
+                            MessageBox.Show("Cập nhật chức vụ không thành công.");
+                            return;
+                        }
                     }
                 }
-                else
+                else if (!string.IsNullOrEmpty(manguoidung) && countChucVuExist==0)
                 {
-                    // Nếu không có, thực hiện insert mới vào bảng DamNhiem
+                    // Nếu chưa có người dùng và manguoidung không rỗng, thực hiện insert mới vào bảng DamNhiem
                     string insertChucVuNguoiDung = "INSERT INTO DamNhiem (MaBan, MaChucVu, MaNguoiDung) VALUES (N'" + maBan + "', N'" + maChucVu + "', N'" + manguoidung + "')";
                     int resultChucVu = db.getNonQuery(insertChucVuNguoiDung);
 
@@ -454,14 +482,17 @@ namespace QLHD_CLB
 
                 // Cập nhật TreeView
                 MessageBox.Show("Cập nhật thông tin thành công.");
-                tv_dsban.Nodes.Clear(); 
-                HienThiDSBan(); 
+                cbb_HoTen.Enabled = false;
+                tv_dsban.Nodes.Clear();
+                HienThiDSBan();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
             }
         }
-        
+
+
+
     }
 }

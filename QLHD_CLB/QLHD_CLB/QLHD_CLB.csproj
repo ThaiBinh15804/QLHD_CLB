@@ -217,6 +217,7 @@
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
+    <Content Include="HinhAnh\Screenshot 2024-10-24 004651.png" />
     <None Include="Resources\icons8-save-50.png" />
     <None Include="Resources\icons8-forward-50.png" />
     <None Include="Resources\icons8-reply-arrow-32.png" />

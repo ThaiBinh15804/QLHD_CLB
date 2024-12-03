@@ -137,6 +137,7 @@
             // 
             // guna2Panel_container
             // 
+            this.guna2Panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel_container.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel_container.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel_container.Name = "guna2Panel_container";
