@@ -16,9 +16,17 @@ namespace QLHD_CLB
 {
     public partial class FormDongQuy : Form
     {
+        private FormGiaoDien parentForm;
+
         public FormDongQuy()
         {
             InitializeComponent();
+        }
+
+        public FormDongQuy(FormGiaoDien _parent)
+        {
+            InitializeComponent();
+            parentForm = _parent;
         }
 
         DBConnect db = new DBConnect();
@@ -526,5 +534,6 @@ namespace QLHD_CLB
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
     }
 }

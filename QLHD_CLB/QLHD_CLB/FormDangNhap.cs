@@ -76,10 +76,10 @@ namespace QLHD_CLB
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string tk = txtTK.Text;
-            string mk = txtMK.Text;
-            //string tk = "nguyenvana";
-            //string mk = "123456";
+            //string tk = txtTK.Text;
+            //string mk = txtMK.Text;
+            string tk = "nguyenvana";
+            string mk = "123456";
 
             //if (!ValidateInputs())
             //{

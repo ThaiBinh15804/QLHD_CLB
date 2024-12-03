@@ -244,7 +244,7 @@ namespace QLHD_CLB
             cbNhaTT.DisplayMember = "TenNhaTaiTro";
             cbNhaTT.ValueMember = "MaNhaTaiTro";
 
-            cbNhaTT.SelectedIndex = 0;
+            cbNhaTT.SelectedIndex = -1;
 
 
             DataTable dtForTKNhaTT = dt.Copy();
@@ -257,7 +257,7 @@ namespace QLHD_CLB
             cbTKNhaTT.DisplayMember = "TenNhaTaiTro";
             cbTKNhaTT.ValueMember = "MaNhaTaiTro";
 
-            cbTKNhaTT.SelectedIndex = 0;
+            cbTKNhaTT.SelectedIndex = -1;
 
             Dictionary<string, string> nhaTaiTroDict = new Dictionary<string, string>
              {
@@ -269,6 +269,8 @@ namespace QLHD_CLB
             cbHangTT.DataSource = new BindingSource(nhaTaiTroDict, null);
             cbHangTT.DisplayMember = "Value";
             cbHangTT.ValueMember = "Key";
+
+            cbHangTT.SelectedIndex = -1;
 
 
         }
@@ -579,6 +581,14 @@ namespace QLHD_CLB
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+
+
+            if (cbNhaTT.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng click sửa và chọn vào nhà tài trợ muốn xoá trên bảng.");
+                return;
+            }
+
             LienKet_TaiTro(dgv.DataSource as DataTable);
             string ntt = cbNhaTT.SelectedValue.ToString();
 
@@ -874,6 +884,11 @@ namespace QLHD_CLB
 
         private void btnXoa_CT_Click(object sender, EventArgs e)
         {
+            if (txtMa_CT.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn vào nút sửa và chọn vào chi tiêu muốn xoá trên bảng.");
+                return;
+            }
             txtMa_CT.DataBindings.Clear();
             txtMa_CT.DataBindings.Add("Text", dgvCT.DataSource as DataTable, "Mã chi tiêu");
             string maChiTieu = txtMa_CT.Text;
