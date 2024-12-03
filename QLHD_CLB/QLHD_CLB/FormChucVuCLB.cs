@@ -138,8 +138,19 @@ namespace QLHD_CLB
                 return;
             }
 
-            // Câu lệnh SQL để xóa chức vụ
-            string xoa = "delete from ChucVu where(MaChucVu='" + txtMaChucVu.Text.Trim() + "' or TenChucVu=N'" + txtTenChucVu.Text.Trim() + "')";
+            // Kiểm tra xem chức vụ có đang được sử dụng trong bảng DamnhiemChucVu hay không
+            string kiemTra = "SELECT COUNT(*) FROM DamNhiem WHERE MaChucVu = '" + txtMaChucVu.Text.Trim() + "' OR MaNguoiDung = N'" + txtTenChucVu.Text.Trim() + "'";
+
+            int count = Convert.ToInt32(db.getScalar(kiemTra));  // Thực thi câu lệnh SELECT để kiểm tra số lượng bản ghi
+
+            if (count > 0) // Nếu có dữ liệu trong bảng DamnhiemChucVu thì không cho phép xóa
+            {
+                MessageBox.Show("Không thể xóa chức vụ này vì đang có người dùng thuộc về chức vụ này.");
+                return;
+            }
+
+            // Nếu không có dữ liệu trong bảng DamnhiemChucVu, tiến hành xóa chức vụ
+            string xoa = "DELETE FROM ChucVu WHERE MaChucVu = '" + txtMaChucVu.Text.Trim() + "' OR TenChucVu = N'" + txtTenChucVu.Text.Trim() + "'";
 
             try
             {
@@ -167,8 +178,8 @@ namespace QLHD_CLB
             {
                 txtMaChucVu.Text = maChucVu;
             }
-
         }
+
 
 
         private void btnSua_Click(object sender, EventArgs e)

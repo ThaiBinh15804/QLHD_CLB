@@ -265,6 +265,15 @@ namespace QLHD_CLB
                 MessageBox.Show("Vui lòng nhập Mã Người Dùng hoặc Họ Tên để xóa.");
                 return;
             }
+            string kiemTra = "SELECT COUNT(*) FROM DamNhiem WHERE  MaNguoiDung = N'" + txtMaNguoiDung.Text.Trim() + "'";
+
+            int count = Convert.ToInt32(db.getScalar(kiemTra));  // Thực thi câu lệnh SELECT để kiểm tra số lượng bản ghi
+
+            if (count > 0) // Nếu có dữ liệu trong bảng DamnhiemChucVu thì không cho phép xóa
+            {
+                MessageBox.Show("Không thể xóa người dùng này vì người dùng đang thuộc về 1 ban.");
+                return;
+            }
 
             // Câu lệnh SQL để xóa người dùng
             string xoa = "delete from NguoiDung where MaNguoiDung=N'" + txtMaNguoiDung.Text.Trim() + "' or HoTen=N'" + txtHoTen.Text.Trim() + "'";
