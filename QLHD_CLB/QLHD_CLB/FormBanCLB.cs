@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLHD_CLB.Model;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace QLHD_CLB
 {
     public partial class FormBanCLB : Form
     {
-        
+        private bool flat = false;
+
         DBConnect db = new DBConnect();
+
         public FormBanCLB()
         {
             InitializeComponent();
@@ -197,6 +200,9 @@ namespace QLHD_CLB
         private bool isXoaBan = false;
         private void tv_dsban_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            if (!flat)
+                return;
+
             TreeNode selectedNode = e.Node;
 
             if (selectedNode.Tag != null)
@@ -338,7 +344,9 @@ namespace QLHD_CLB
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            flat=true;
             cbb_HoTen.Enabled = true;
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -353,10 +361,16 @@ namespace QLHD_CLB
             {
                 txtMaBan.Text = maBan;
             }
+            btnThem.Enabled = true;
         }
 
         private void tv_dsban_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            if (!flat)
+            {
+                return;
+            }
+
             TreeNode tn = e.Node;
             if (tn.Parent == null)  
             {
@@ -511,6 +525,7 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
             }
+            btnThem.Enabled = true;
         }
 
 

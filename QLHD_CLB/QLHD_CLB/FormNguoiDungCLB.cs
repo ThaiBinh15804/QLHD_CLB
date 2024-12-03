@@ -314,24 +314,47 @@ namespace QLHD_CLB
         private void btnSua_Click(object sender, EventArgs e)
         {
             flat = true;
-
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            // Reset trạng thái của các ô nhập liệu
             flat = false;
             txtHoTen.Clear();
             txtTenTK.Clear();
             txtMatKhau.Clear();
             txtAnhDaiDien.Clear();
-            cbbTrangThai.SelectedIndex = -1;
+            cbbTrangThai.SelectedIndex = -1;  // Reset ComboBox
+            pictureBox1.Image = null;  // Xóa ảnh đại diện
+
+            // Tạo mã người dùng mới
             string maNguoiDung = SinhMaNguoiDung();
             if (maNguoiDung != null)
             {
-                txtMaNguoiDung.Text = maNguoiDung;
+                txtMaNguoiDung.Text = maNguoiDung;  // Gán mã người dùng mới vào textbox
             }
-            pictureBox1.Image = null;
+
+            // Làm mới DataGridView (hiển thị toàn bộ dữ liệu)
+            string query = "SELECT * FROM NguoiDung";  // Truy vấn lấy toàn bộ dữ liệu
+            try
+            {
+                DataTable dt = db.getSqlDataAdapter(query);  // Thực thi truy vấn
+                dgvDSNguoiDung.DataSource = dt;  // Gán kết quả vào DataGridView
+
+                // Kiểm tra nếu không có dữ liệu
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để hiển thị.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi làm mới dữ liệu: " + ex.Message);
+            }
+            btnThem.Enabled=true;
         }
+
 
         private void dgvDSNguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -464,6 +487,7 @@ namespace QLHD_CLB
             txtAnhDaiDien.Clear();
             cbbTrangThai.SelectedIndex = -1;
             pictureBox1.Image = null;
+            btnThem.Enabled = true;
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -475,16 +499,18 @@ namespace QLHD_CLB
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                string[] dsFile = dlg.FileNames;
-                string folderPath = Path.Combine(Application.StartupPath, "HinhAnh", "AnhDaiDien"); // Thư mục con AnhDaiDien
+                // Đường dẫn đến thư mục chứa ảnh
+                string dsFile = Directory.GetParent(Application.StartupPath).Parent.FullName;
+                string folderPath = Path.Combine(dsFile, "HinhAnh");
 
-                // Kiểm tra xem thư mục AnhDaiDien đã tồn tại chưa, nếu chưa thì tạo mới
+                // Kiểm tra xem thư mục đã tồn tại chưa, nếu chưa thì tạo mới
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
-                foreach (string tenFile in dsFile)
+                // Duyệt qua danh sách các tệp tin được chọn
+                foreach (string tenFile in dlg.FileNames)
                 {
                     FileInfo fi = new FileInfo(tenFile);
                     string[] xxx = tenFile.Split('\\');  // Tách tên file từ đường dẫn đầy đủ
@@ -506,6 +532,7 @@ namespace QLHD_CLB
                 MessageBox.Show("Thêm ảnh thành công");
                 dlg.Dispose();
             }
+
         }
 
 
