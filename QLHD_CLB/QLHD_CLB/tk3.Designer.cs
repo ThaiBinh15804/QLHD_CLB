@@ -43,6 +43,7 @@
             this.crystalReportViewer3.Name = "crystalReportViewer3";
             this.crystalReportViewer3.Size = new System.Drawing.Size(954, 615);
             this.crystalReportViewer3.TabIndex = 0;
+            this.crystalReportViewer3.Load += new System.EventHandler(this.crystalReportViewer3_Load);
             // 
             // tk3
             // 

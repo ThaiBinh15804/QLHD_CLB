@@ -20,7 +20,7 @@ namespace QLHD_CLB
 
         private DataTable GetReportData()
         {
-            using (SqlConnection conn = new SqlConnection("Data Source = PHAMTHUAN\\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123"))
+            using (SqlConnection conn = new SqlConnection("Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123"))
             {
                 conn.Open();
 
@@ -71,6 +71,11 @@ namespace QLHD_CLB
         private void tk2_Load(object sender, EventArgs e)
         {
             ShowReport();
+        }
+
+        private void crystalReportViewer2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
