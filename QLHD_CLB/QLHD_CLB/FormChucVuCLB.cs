@@ -263,6 +263,7 @@ namespace QLHD_CLB
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
             btnThem.Enabled = true;
+            flat=false;
         }
 
 

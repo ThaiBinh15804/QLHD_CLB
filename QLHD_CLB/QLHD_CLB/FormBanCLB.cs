@@ -249,10 +249,12 @@ namespace QLHD_CLB
                 MessageBox.Show("Vui lòng chọn một ban để xóa.");
                 return;
             }
+
             SqlConnection connection = db.con;
             try
             {
                 connection.Open();
+
                 if (isXoaBan)
                 {
                     bool coNguoiDung = true; // Biến kiểm tra có người dùng trong bàn hay không
@@ -277,6 +279,33 @@ namespace QLHD_CLB
                             }
                         }
                     }
+                    // Kiểm tra xem ban có thành viên nào không
+                    string kiemTraThanhVien = "SELECT COUNT(*) FROM ThanhVien WHERE MaBan = @MaBan";
+                    using (SqlCommand cmd = new SqlCommand(kiemTraThanhVien, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@MaBan", maBan);
+                        int soLuongThanhVien = (int)cmd.ExecuteScalar();
+                        if (soLuongThanhVien > 0) // Nếu có thành viên trong ban, không cho phép xóa
+                        {
+                            MessageBox.Show("Không thể xóa ban vì có thành viên đang tham gia ban này.");
+                            return; // Dừng lại ở đây không thực hiện xóa ban
+                        }
+                    }
+
+                    // Kiểm tra xem ban có nhiệm vụ phân công không
+                    string kiemTraPhanCong = "SELECT COUNT(*) FROM PhanCong WHERE MaBan = @MaBan";
+                    using (SqlCommand cmd = new SqlCommand(kiemTraPhanCong, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@MaBan", maBan);
+                        int soLuongPhanCong = (int)cmd.ExecuteScalar();
+                        if (soLuongPhanCong > 0) // Nếu có nhiệm vụ phân công, không cho phép xóa
+                        {
+                            MessageBox.Show("Không thể xóa ban vì ban này đang được phân công công việc.");
+                            return; // Dừng lại ở đây không thực hiện xóa ban
+                        }
+                    }
+
+                    // Kiểm tra xem có người dùng nào thuộc chức vụ trong ban không
                     string kiemTraDamNhiem = "SELECT COUNT(*) FROM DamNhiem WHERE MaBan = @MaBan";
                     using (SqlCommand cmd = new SqlCommand(kiemTraDamNhiem, connection))
                     {
@@ -284,6 +313,7 @@ namespace QLHD_CLB
                         int soLuongDamNhiem = (int)cmd.ExecuteScalar();
                         if (soLuongDamNhiem > 0)
                         {
+                            // Xóa tất cả nhiệm vụ trong DamNhiem
                             string xoaDamNhiemAll = "DELETE FROM DamNhiem WHERE MaBan = @MaBan";
                             using (SqlCommand cmd2 = new SqlCommand(xoaDamNhiemAll, connection))
                             {
@@ -292,12 +322,15 @@ namespace QLHD_CLB
                             }
                         }
                     }
+
+                    // Thực hiện xóa ban
                     string xoaBan = "DELETE FROM Ban WHERE MaBan = @MaBan";
                     using (SqlCommand cmd = new SqlCommand(xoaBan, connection))
                     {
                         cmd.Parameters.AddWithValue("@MaBan", maBan);
                         cmd.ExecuteNonQuery();
                     }
+
                     MessageBox.Show("Xóa ban thành công.");
                 }
                 else
@@ -307,6 +340,7 @@ namespace QLHD_CLB
                         MessageBox.Show("Vui lòng chọn chức vụ và người dùng để xóa liên kết.");
                         return;
                     }
+
                     string xoaDamNhiem = "DELETE FROM DamNhiem WHERE MaBan = @MaBan AND MaChucVu = @MaChucVu AND MaNguoiDung = @MaNguoiDung";
                     using (SqlCommand cmd = new SqlCommand(xoaDamNhiem, connection))
                     {
@@ -318,6 +352,8 @@ namespace QLHD_CLB
 
                     MessageBox.Show("Xóa người dùng thuộc chức vụ thành công.");
                 }
+
+                // Làm mới các thông tin trên form sau khi xóa
                 this.txtMaBan.Clear();
                 this.txtTenBan.Clear();
                 this.txtMoTa.Clear();
@@ -335,6 +371,7 @@ namespace QLHD_CLB
                     connection.Close();
                 }
             }
+
             string maBan2 = SinhMaBan();
             if (maBan2 != null)
             {
@@ -342,11 +379,13 @@ namespace QLHD_CLB
             }
         }
 
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             flat=true;
             cbb_HoTen.Enabled = true;
             btnThem.Enabled = false;
+            tv_dsban.SelectedNode = null;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -524,6 +563,16 @@ namespace QLHD_CLB
             catch (Exception ex)
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
+            }
+            this.txtTenBan.Clear();
+            this.txtMoTa.Clear();
+            this.txtChucVu.Clear();
+            this.cbb_HoTen.SelectedItem = null;
+            cbb_HoTen.Enabled = false;
+            string maBan2 = SinhMaBan();
+            if (maBan2 != null)
+            {
+                txtMaBan.Text = maBan;
             }
             btnThem.Enabled = true;
         }

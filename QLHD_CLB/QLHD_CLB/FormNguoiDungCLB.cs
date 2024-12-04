@@ -488,6 +488,7 @@ namespace QLHD_CLB
             cbbTrangThai.SelectedIndex = -1;
             pictureBox1.Image = null;
             btnThem.Enabled = true;
+            flat = false;
         }
 
         private void btnFile_Click(object sender, EventArgs e)
