@@ -27,6 +27,21 @@ namespace QLHD_CLB
             parentForm = _parentForm;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
         private void ClearAllTextBoxes(Control parent)
         {
             foreach (Control control in parent.Controls)
@@ -102,6 +117,17 @@ namespace QLHD_CLB
             dateTKNgayKT.Checked = false;
             dateNgayBD.Checked = false;
             dateNgayKT.Checked = false;
+
+            if (!(GlobalValue.ChucVu_NguoiDung == "CV001" || GlobalValue.ChucVu_NguoiDung == "CV002"))
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnLuu.Enabled = false;
+                btnHuy.Enabled = false;
+
+                SetControlsEnabledFalse(grThem);
+            }    
 
         }
 
@@ -481,6 +507,11 @@ namespace QLHD_CLB
         private void dateNgayKT_ValueChanged(object sender, EventArgs e)
         {
             gioKT.Text = dateNgayKT.Value.ToString("HH:mm");
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

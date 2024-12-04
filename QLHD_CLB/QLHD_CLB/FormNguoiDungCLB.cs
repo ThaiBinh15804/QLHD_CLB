@@ -382,7 +382,8 @@ namespace QLHD_CLB
                 cbbTrangThai.Text = trangthai;
 
                 // Tạo đường dẫn đầy đủ tới thư mục HinhAnh\AnhDaiDien
-                string folderPath = Path.Combine(Application.StartupPath, "HinhAnh", "AnhDaiDien");
+                string projectDirectory = Directory.GetParent(Application.StartupPath).Parent.FullName;
+                string folderPath = Path.Combine(projectDirectory, "HinhAnh", "AnhDaiDien");
 
                 // Kiểm tra nếu tên ảnh không rỗng và thư mục chứa ảnh tồn tại
                 if (!string.IsNullOrEmpty(anh))

@@ -15,9 +15,17 @@ namespace QLHD_CLB
 {
     public partial class FormThongKe : Form
     {
+        private FormGiaoDien parent;
+
         public FormThongKe()
         {
             InitializeComponent();
+        }
+
+        public FormThongKe(FormGiaoDien _parentForm)
+        {
+            InitializeComponent();
+            parent = _parentForm;
         }
 
         DBConnect db = new DBConnect();
@@ -141,30 +149,18 @@ namespace QLHD_CLB
 
         private void HienThiThanhVienTheoThang()
         {
-            string query = "SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', ThanhVien.SoDienThoai as N'Số điện thoại', ThanhVien.DiaChi as N'Địa chỉ', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') = (SELECT TOP 1 FORMAT(NgayThamGia, 'yyyy-MM') FROM ThanhVien WHERE NgayThamGia >= DATEADD(MONTH, -6, GETDATE()) ORDER BY NgayThamGia DESC);";
+            string query = "SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') = (SELECT TOP 1 FORMAT(NgayThamGia, 'yyyy-MM') FROM ThanhVien WHERE NgayThamGia >= DATEADD(MONTH, -6, GETDATE()) ORDER BY NgayThamGia DESC);";
             DataTable dt = db.getSqlDataAdapter(query);
             dtg_thongkeThanhVienThamGia.DataSource = dt;
 
-            // Thiết lập độ rộng cho các cột
-            dtg_thongkeThanhVienThamGia.Columns["Họ tên"].Width = 180;
-            dtg_thongkeThanhVienThamGia.Columns["Giới tính"].Width = 120;
-            dtg_thongkeThanhVienThamGia.Columns["Số điện thoại"].Width = 160;
-            dtg_thongkeThanhVienThamGia.Columns["Địa chỉ"].Width = 150;
-            dtg_thongkeThanhVienThamGia.Columns["Thuộc ban"].Width = 200;
         }
 
         private void LocHienThiThanhVienTheoThang(string thangNam)
         {
-            string query = " SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', ThanhVien.SoDienThoai as N'Số điện thoại', ThanhVien.DiaChi as N'Địa chỉ', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') ='" + thangNam + "'";
+            string query = " SELECT ThanhVien.HoTen as N'Họ tên', ThanhVien.GioiTinh as N'Giới tính', Ban.TenBan as N'Thuộc ban' FROM ThanhVien JOIN Ban ON Ban.MaBan = ThanhVien.MaBan WHERE FORMAT(ThanhVien.NgayThamGia, 'yyyy-MM') ='" + thangNam + "'";
             DataTable dt = db.getSqlDataAdapter(query);
             dtg_thongkeThanhVienThamGia.DataSource = dt;
 
-            // Thiết lập độ rộng cho các cột
-            dtg_thongkeThanhVienThamGia.Columns["Họ tên"].Width = 180;
-            dtg_thongkeThanhVienThamGia.Columns["Giới tính"].Width = 120;
-            dtg_thongkeThanhVienThamGia.Columns["Số điện thoại"].Width = 160;
-            dtg_thongkeThanhVienThamGia.Columns["Địa chỉ"].Width = 150;
-            dtg_thongkeThanhVienThamGia.Columns["Thuộc ban"].Width = 200;
         }
 
         private void comboBoxlocThanhVienTheoThang_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,17 +239,89 @@ namespace QLHD_CLB
                 MessageBox.Show("Данных не достаточно.", "Ошибка");
         }
 
-        private void ThongKeGioiTinh()
+        private void ThongKeTaiTroDongQuyChiTieuCacThang()
         {
-            // Câu truy vấn SQL để lấy dữ liệu thống kê giới tính
-            string query = @"SELECT 
-                     GioiTinh,
-                     COUNT(*) AS SoLuong
-                     FROM ThanhVien
-                     GROUP BY GioiTinh";
-            DataTable dt = db.getSqlDataAdapter(query);
-            
-            ChartPie(gunaChart2, dt, "Thống kê giới tính thành viên");
+            // Kết nối đến SQL Server
+            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string procedureName = "GetFinancialSummary";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Mở kết nối đến cơ sở dữ liệu
+                connection.Open();
+
+                // Tạo SqlCommand để gọi stored procedure
+                SqlCommand command = new SqlCommand(procedureName, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Thực thi procedure và lấy dữ liệu
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Kiểm tra nếu có dữ liệu trả về
+                if (reader.HasRows)
+                {
+                    // Chỉ đọc dòng đầu tiên
+                    reader.Read();
+
+                    // Tạo datasets cho biểu đồ
+                    GunaBarDataset taiTroDataset = new GunaBarDataset
+                    {
+                        Label = "Tài Trợ (Hiện Kim)",
+                        FillColors = new ColorCollection()
+                    };
+
+                    GunaBarDataset chiTieuDataset = new GunaBarDataset
+                    {
+                        Label = "Chi Tiêu",
+                        FillColors = new ColorCollection()
+                    };
+
+                    GunaBarDataset dongQuyDataset = new GunaBarDataset
+                    {
+                        Label = "Đóng Quỹ",
+                        FillColors = new ColorCollection()
+                    };
+
+                    // Đọc dữ liệu từ dòng đầu tiên
+                    string namThang = reader["Năm/Tháng"].ToString();
+                    decimal tongTienTaiTro = Convert.ToDecimal(reader["Tổng Số Tiền Đóng Góp (Hiện Kim)"]);
+                    decimal tongTienChiTieu = Convert.ToDecimal(reader["Tổng Số Tiền Thực Chi"]);
+                    decimal tongTienDongQuy = Convert.ToDecimal(reader["Tổng Số Tiền Đã Đóng"]);
+
+                    // Tạo màu sắc cho từng tháng
+                    Random random = new Random();
+                    Color monthColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+
+                    // Thêm dữ liệu vào datasets
+                    taiTroDataset.DataPoints.Add(namThang, (double)tongTienTaiTro);
+                    chiTieuDataset.DataPoints.Add(namThang, (double)tongTienChiTieu);
+                    dongQuyDataset.DataPoints.Add(namThang, (double)tongTienDongQuy);
+
+                    // Đặt màu cho từng cột
+                    taiTroDataset.FillColors.Add(monthColor);
+                    chiTieuDataset.FillColors.Add(Color.FromArgb(Math.Max(0, monthColor.R - 50), Math.Max(0, monthColor.G - 50), Math.Max(0, monthColor.B - 50)));
+                    dongQuyDataset.FillColors.Add(Color.FromArgb(Math.Max(0, monthColor.R - 100), Math.Max(0, monthColor.G - 100), Math.Max(0, monthColor.B - 100)));
+
+                    // Gán các datasets vào biểu đồ
+                    gunaChart2.Datasets.Clear();
+                    gunaChart2.Datasets.Add(taiTroDataset);
+                    gunaChart2.Datasets.Add(chiTieuDataset);
+                    gunaChart2.Datasets.Add(dongQuyDataset);
+
+                    // Cấu hình biểu đồ
+                    gunaChart2.XAxes.Display = true;  // Hiển thị trục X
+                    gunaChart2.YAxes.Display = true;  // Hiển thị trục Y
+
+                    // Cập nhật biểu đồ
+                    gunaChart2.Update();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu.");
+                }
+            }
         }
 
         private void ThongKeDongQuy()
@@ -299,9 +367,31 @@ namespace QLHD_CLB
 
             LocThanhVienTheoThang();
             HienThiThanhVienTheoThang();
-            ThongKeGioiTinh();
+            ThongKeTaiTroDongQuyChiTieuCacThang();
             ThongKeSuKienSapDienRaHoacDangDienRa();
             ThongKeDongQuy();
+        }
+
+        private void btn_tk1_Click(object sender, EventArgs e)
+        {
+            if (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                parent.container(new tk1());
+            }
+        }
+
+        private void btn_tk3_Click(object sender, EventArgs e)
+        {
+            parent.container(new tk3());
+        }
+
+        private void btn_tk2_Click(object sender, EventArgs e)
+        {
+            parent.container(new tk2());
         }
     }
 }

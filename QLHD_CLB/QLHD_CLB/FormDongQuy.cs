@@ -29,6 +29,21 @@ namespace QLHD_CLB
             parentForm = _parent;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
         DBConnect db = new DBConnect();
 
         private void HienThi_DSKeHoachDongQuy()
@@ -136,6 +151,7 @@ namespace QLHD_CLB
             HienThi_DSKeHoachDongQuy();
             HienThi_ComboBoxLocTrangThai();
             HienThi_ComboBoxTrangThai();
+
         }
 
         private void HienThiDSThanhVienDongQuy(string makh)
@@ -153,39 +169,36 @@ namespace QLHD_CLB
             dtg_dsDongQuy.Columns["Ngày đóng"].Width = 120;       // Đặt chiều rộng 80
             dtg_dsDongQuy.Columns["Trạng thái"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-
+        bool flag = false;
         private void dtg_DSKeHoachDongQuy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 inputMaKH.Enabled = false;
-                inputTenKeHoach.Enabled = false;
-                inputMoTa.Enabled = false;
-                inputSoTienCanDong.Enabled = false;
-                comboBox_TrangThai.Enabled = false;
-                guna2DateTimePicker1.Enabled = false;
-                guna2DateTimePicker2.Enabled = false;
-
                 inputMaKH.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Mã kế hoạch"].Value.ToString();
                 comboBox_LocTrangThai.SelectedIndexChanged -= comboBox_TrangThai_SelectedIndexChanged;
 
-                inputTenKeHoach.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Tên kế hoạch"].Value.ToString();
-                inputSoTienCanDong.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Số tiền cần đóng"].Value.ToString();
-                inputMoTa.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Mô tả"].Value.ToString();
-                comboBox_TrangThai.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Trạng thái"].Value.ToString();
+                if(flag == true)
+                {
+                    inputTenKeHoach.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Tên kế hoạch"].Value.ToString();
+                    inputSoTienCanDong.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Số tiền cần đóng"].Value.ToString();
+                    inputMoTa.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Mô tả"].Value.ToString();
+                    comboBox_TrangThai.Text = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Trạng thái"].Value.ToString();
 
-                string ngayBatDau = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày bắt đầu"].Value.ToString();
-                string ngayKetThuc = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày kết thúc"].Value.ToString();
-                DateTime parsedDate;
-                if (DateTime.TryParse(ngayBatDau, out parsedDate ))
-                {
-                    guna2DateTimePicker1.Value = parsedDate; // Gán giá trị ngày sau khi chuyển đổi
+                    string ngayBatDau = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày bắt đầu"].Value.ToString();
+                    string ngayKetThuc = dtg_DSKeHoachDongQuy.Rows[e.RowIndex].Cells["Ngày kết thúc"].Value.ToString();
+                    DateTime parsedDate;
+                    if (DateTime.TryParse(ngayBatDau, out parsedDate ))
+                    {
+                        guna2DateTimePicker1.Value = parsedDate; // Gán giá trị ngày sau khi chuyển đổi
+                    }
+                    DateTime parsedDate2;
+                    if (DateTime.TryParse(ngayKetThuc, out parsedDate2))
+                    {
+                        guna2DateTimePicker2.Value = parsedDate2; // Gán giá trị ngày sau khi chuyển đổi
+                    }
                 }
-                DateTime parsedDate2;
-                if (DateTime.TryParse(ngayKetThuc, out parsedDate2))
-                {
-                    guna2DateTimePicker2.Value = parsedDate2; // Gán giá trị ngày sau khi chuyển đổi
-                }
+
 
                 HienThiDSThanhVienDongQuy(inputMaKH.Text);
 
@@ -211,6 +224,7 @@ namespace QLHD_CLB
         private void btn_lamMoi_Click(object sender, EventArgs e)
         {
             ResetForm();
+            flag = false;
             inputMaKH.Enabled = true;
             inputTenKeHoach.Enabled = true;
             inputMoTa.Enabled = true;
@@ -294,6 +308,8 @@ namespace QLHD_CLB
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            flag = true;
+            btn_themKeHoachDongQuy.Enabled = false;
             inputMaKH.Enabled = true;
             inputTenKeHoach.Enabled = true;
             inputMoTa.Enabled = true;
@@ -314,6 +330,8 @@ namespace QLHD_CLB
                 MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThi_DSKeHoachDongQuy();
                 btn_luu.Enabled = false;
+                btn_themKeHoachDongQuy.Enabled = true;
+                flag = false;
                 ResetForm();
             }
             catch (Exception ex)

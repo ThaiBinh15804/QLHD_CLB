@@ -140,6 +140,21 @@ namespace QLHD_CLB
             comboBox_locBan.SelectedIndex = 0;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
         private void FormThanhVien_Load(object sender, EventArgs e)
         {
             HienThi_ComboBoxDSBan();
@@ -153,6 +168,12 @@ namespace QLHD_CLB
             dt.Columns.Add("Nhiệm vụ phân công");
             dt.Columns.Add("Mô tả");
             dtg_hdthamgia.DataSource = dt;
+
+            if (!(GlobalValue.ChucVu_NguoiDung == "CV001" || GlobalValue.ChucVu_NguoiDung == "CV002"))
+            {
+                SetControlsEnabledFalse(guna2GroupBox1);
+                SetControlsEnabledFalse(groupBox1);
+            }    
         }
 
         private void ResetForm()
@@ -261,41 +282,39 @@ namespace QLHD_CLB
             }
         }
 
+        bool flag = false;
         private void dtg_DSTV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 inputMaTV.Enabled = false;
-                inputHoTen.Enabled = false;
-                inputDiaChi.Enabled = false;
-                inputEmail.Enabled = false;
-                inputSoDienThoai.Enabled = false;
-                comboBox_DSBan.Enabled = false;
-                comboBox_TrangThai.Enabled = false;
-                radioButton_Nam.Enabled = false;
-                radioButton_Nu.Enabled = false;
 
-                inputMaTV.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Mã thành viên"].Value.ToString();
                 comboBox_locBan.SelectedIndexChanged -= comboBox_locBan_SelectedIndexChanged;
-                inputHoTen.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Họ tên"].Value.ToString();
-                inputEmail.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                inputSoDienThoai.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Số điện thoại"].Value.ToString();
-                inputDiaChi.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Địa chỉ"].Value.ToString();
-                string gioitinh = dtg_DSTV.Rows[e.RowIndex].Cells["Giới tính"].Value.ToString().Trim();
-
-                comboBox_TrangThai.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Trạng thái"].Value.ToString();
-                comboBox_DSBan.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Thuộc ban"].Value.ToString();
-
-                radioButton_Nam.Checked = false;
-                radioButton_Nu.Checked = false;
-                if (gioitinh == "Nam")
+                inputMaTV.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Mã thành viên"].Value.ToString();
+                if(flag == true)
                 {
-                    radioButton_Nam.Checked = true;
+                    //
+                    inputHoTen.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Họ tên"].Value.ToString();
+                    inputEmail.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                    inputSoDienThoai.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Số điện thoại"].Value.ToString();
+                    inputDiaChi.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Địa chỉ"].Value.ToString();
+                    string gioitinh = dtg_DSTV.Rows[e.RowIndex].Cells["Giới tính"].Value.ToString().Trim();
+
+                    comboBox_TrangThai.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Trạng thái"].Value.ToString();
+                    comboBox_DSBan.Text = dtg_DSTV.Rows[e.RowIndex].Cells["Thuộc ban"].Value.ToString();
+
+                    radioButton_Nam.Checked = false;
+                    radioButton_Nu.Checked = false;
+                    if (gioitinh == "Nam")
+                    {
+                        radioButton_Nam.Checked = true;
+                    }
+                    else if (gioitinh == "Nữ")
+                    {
+                        radioButton_Nu.Checked = true;
+                    }
                 }
-                else if (gioitinh == "Nữ")
-                {
-                    radioButton_Nu.Checked = true;
-                }
+
 
                 string queryDSThamGiaHoatDong = "SELECT DISTINCT pc.NhiemVu AS N'Nhiệm vụ phân công', pc.MoTa AS N'Mô tả' FROM ThanhVien tv JOIN ChiTietPhanCong ctp ON tv.MaThanhVien = ctp.MaThanhVien JOIN PhanCong pc ON ctp.MaPhanCong = pc.MaPhanCong WHERE tv.MaThanhVien ='" + inputMaTV.Text + "'";
                 DataTable dt = db.getSqlDataAdapter(queryDSThamGiaHoatDong);
@@ -308,6 +327,8 @@ namespace QLHD_CLB
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            flag = true;
+            btn_themThanhVien.Enabled = false;
             inputMaTV.Enabled = true;
             inputHoTen.Enabled = true;
             inputDiaChi.Enabled = true;
@@ -338,6 +359,8 @@ namespace QLHD_CLB
                 MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThi_DSThanhVien();
                 btn_luu.Enabled = false;
+                btn_themThanhVien.Enabled = true;
+                flag = false;
                 ResetForm();
             }
             catch (Exception ex)
@@ -430,6 +453,8 @@ namespace QLHD_CLB
 
         private void btn_lamMoi_Click(object sender, EventArgs e)
         {
+            flag = false;
+            btn_themThanhVien.Enabled = true;
             inputMaTV.Enabled = true;
             inputHoTen.Enabled = true;
             inputDiaChi.Enabled = true;
@@ -441,5 +466,6 @@ namespace QLHD_CLB
             radioButton_Nu.Enabled = true;
             ResetForm();
         }
+
     }
 }

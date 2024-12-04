@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.Charts.WinForms.1.1.0\lib\net45\Guna.Charts.WinForms.dll</HintPath>
     </Reference>
@@ -43,6 +47,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormBanCLB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +169,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCauLacBoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="tk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tk1.Designer.cs">
+      <DependentUpon>tk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tk2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tk2.Designer.cs">
+      <DependentUpon>tk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tk3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tk3.Designer.cs">
+      <DependentUpon>tk3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBanCLB.resx">
       <DependentUpon>FormBanCLB.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +251,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="tk1.resx">
+      <DependentUpon>tk1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tk2.resx">
+      <DependentUpon>tk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tk3.resx">
+      <DependentUpon>tk3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -233,8 +295,6 @@
     <Content Include="HinhAnh\AnhDaiDien\h5.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h4.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
-    <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
-    <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
     <Content Include="Resources\iconSideBar5.png" />
     <Content Include="Resources\iconThongKe1.png" />
     <Content Include="Resources\iconThongKe2.png" />
@@ -249,7 +309,9 @@
     <None Include="Resources\icons8-back-48.png" />
     <None Include="Resources\logotruong.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

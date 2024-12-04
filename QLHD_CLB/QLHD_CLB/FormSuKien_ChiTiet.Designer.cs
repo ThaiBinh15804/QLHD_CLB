@@ -1805,6 +1805,7 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Phân công";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -1944,6 +1945,7 @@
             // 
             // guna2HtmlLabel12
             // 
+            this.guna2HtmlLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Location = new System.Drawing.Point(292, 186);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
