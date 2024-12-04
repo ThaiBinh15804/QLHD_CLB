@@ -131,6 +131,16 @@ namespace QLHD_CLB
             }
             HienThiDSBan();
             HienThiDS_ChucVu();
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV002")
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnLuu.Enabled = false;
+                btnLamMoi.Enabled = false;
+            }
+
         }
 
         private string SinhMaBan()

@@ -302,7 +302,14 @@ namespace QLHD_CLB
 
         private void btn_tk1_Click(object sender, EventArgs e)
         {
-            parent.container(new tk1());
+            if (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                parent.container(new tk1());
+            }
         }
     }
 }

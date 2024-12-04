@@ -140,6 +140,21 @@ namespace QLHD_CLB
             comboBox_locBan.SelectedIndex = 0;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
         private void FormThanhVien_Load(object sender, EventArgs e)
         {
             HienThi_ComboBoxDSBan();
@@ -153,6 +168,12 @@ namespace QLHD_CLB
             dt.Columns.Add("Nhiệm vụ phân công");
             dt.Columns.Add("Mô tả");
             dtg_hdthamgia.DataSource = dt;
+
+            if (!(GlobalValue.ChucVu_NguoiDung == "CV001" || GlobalValue.ChucVu_NguoiDung == "CV002"))
+            {
+                SetControlsEnabledFalse(guna2GroupBox1);
+                SetControlsEnabledFalse(groupBox1);
+            }    
         }
 
         private void ResetForm()

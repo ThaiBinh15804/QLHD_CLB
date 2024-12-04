@@ -29,6 +29,21 @@ namespace QLHD_CLB
             parentForm = _parentForm;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
 
         private void LienKetDuLieu(DataTable dt)
         {
@@ -80,6 +95,16 @@ namespace QLHD_CLB
 
         private void FormNhaTaiTro_Load(object sender, EventArgs e)
         {
+            if (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnLuu.Enabled = false;
+                btnHuy.Enabled = false;
+                SetControlsEnabledFalse(grNTT);
+            }    
+
             DBConnect data = new DBConnect();
 
             string sql = "SELECT * FROM NhaTaiTro;";

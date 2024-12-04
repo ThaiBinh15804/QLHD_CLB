@@ -114,7 +114,7 @@
             this.dtg_DSKeHoachDongQuy.RowHeadersVisible = false;
             this.dtg_DSKeHoachDongQuy.RowHeadersWidth = 51;
             this.dtg_DSKeHoachDongQuy.RowTemplate.Height = 40;
-            this.dtg_DSKeHoachDongQuy.Size = new System.Drawing.Size(882, 297);
+            this.dtg_DSKeHoachDongQuy.Size = new System.Drawing.Size(861, 297);
             this.dtg_DSKeHoachDongQuy.TabIndex = 24;
             this.dtg_DSKeHoachDongQuy.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_DSKeHoachDongQuy.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -144,7 +144,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(572, 3);
+            this.label1.Location = new System.Drawing.Point(551, 3);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.label1.Size = new System.Drawing.Size(72, 41);
@@ -163,7 +163,7 @@
             this.comboBox_LocTrangThai.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.comboBox_LocTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBox_LocTrangThai.ItemHeight = 30;
-            this.comboBox_LocTrangThai.Location = new System.Drawing.Point(650, 8);
+            this.comboBox_LocTrangThai.Location = new System.Drawing.Point(629, 8);
             this.comboBox_LocTrangThai.Name = "comboBox_LocTrangThai";
             this.comboBox_LocTrangThai.Size = new System.Drawing.Size(244, 36);
             this.comboBox_LocTrangThai.TabIndex = 25;
@@ -199,7 +199,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(12, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(882, 52);
+            this.panel3.Size = new System.Drawing.Size(861, 52);
             this.panel3.TabIndex = 23;
             // 
             // label2
@@ -249,7 +249,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 415);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(492, 431);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(471, 431);
             this.guna2GroupBox1.TabIndex = 26;
             this.guna2GroupBox1.Text = "Thông tin kế hoạch đóng quỹ";
             // 
@@ -349,7 +349,7 @@
             this.comboBox_TrangThai.ItemHeight = 30;
             this.comboBox_TrangThai.Location = new System.Drawing.Point(144, 365);
             this.comboBox_TrangThai.Name = "comboBox_TrangThai";
-            this.comboBox_TrangThai.Size = new System.Drawing.Size(308, 36);
+            this.comboBox_TrangThai.Size = new System.Drawing.Size(287, 36);
             this.comboBox_TrangThai.TabIndex = 36;
             // 
             // panel6
@@ -394,7 +394,7 @@
             this.inputMoTa.PlaceholderText = "Nhập mô tả";
             this.inputMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.inputMoTa.SelectedText = "";
-            this.inputMoTa.Size = new System.Drawing.Size(419, 78);
+            this.inputMoTa.Size = new System.Drawing.Size(398, 78);
             this.inputMoTa.TabIndex = 4;
             // 
             // inputSoTienCanDong
@@ -418,7 +418,7 @@
             this.inputSoTienCanDong.PasswordChar = '\0';
             this.inputSoTienCanDong.PlaceholderText = "Nhập số tiền cần đóng";
             this.inputSoTienCanDong.SelectedText = "";
-            this.inputSoTienCanDong.Size = new System.Drawing.Size(419, 48);
+            this.inputSoTienCanDong.Size = new System.Drawing.Size(398, 48);
             this.inputSoTienCanDong.TabIndex = 23;
             // 
             // inputTenKeHoach
@@ -442,7 +442,7 @@
             this.inputTenKeHoach.PasswordChar = '\0';
             this.inputTenKeHoach.PlaceholderText = "Nhập tên kế hoạch";
             this.inputTenKeHoach.SelectedText = "";
-            this.inputTenKeHoach.Size = new System.Drawing.Size(419, 35);
+            this.inputTenKeHoach.Size = new System.Drawing.Size(398, 35);
             this.inputTenKeHoach.TabIndex = 3;
             // 
             // groupBox1
@@ -453,7 +453,7 @@
             this.groupBox1.Controls.Add(this.btn_sua);
             this.groupBox1.Controls.Add(this.btn_luu);
             this.groupBox1.Controls.Add(this.btn_xoa);
-            this.groupBox1.Location = new System.Drawing.Point(534, 593);
+            this.groupBox1.Location = new System.Drawing.Point(513, 593);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(360, 253);
             this.groupBox1.TabIndex = 27;
@@ -556,7 +556,7 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(12, 865);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(492, 384);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(471, 384);
             this.guna2GroupBox2.TabIndex = 28;
             this.guna2GroupBox2.Text = "Danh sách thành viên đóng quỹ";
             // 
@@ -591,7 +591,7 @@
             this.dtg_dsDongQuy.RowHeadersVisible = false;
             this.dtg_dsDongQuy.RowHeadersWidth = 51;
             this.dtg_dsDongQuy.RowTemplate.Height = 40;
-            this.dtg_dsDongQuy.Size = new System.Drawing.Size(492, 344);
+            this.dtg_dsDongQuy.Size = new System.Drawing.Size(471, 344);
             this.dtg_dsDongQuy.TabIndex = 34;
             this.dtg_dsDongQuy.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_dsDongQuy.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -629,7 +629,7 @@
             this.groupBox2.Controls.Add(this.btn_sua_dongquy);
             this.groupBox2.Controls.Add(this.btn_luu_dongquy);
             this.groupBox2.Controls.Add(this.btn_xoadongquy);
-            this.groupBox2.Location = new System.Drawing.Point(534, 933);
+            this.groupBox2.Location = new System.Drawing.Point(513, 933);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(360, 224);
             this.groupBox2.TabIndex = 29;
@@ -712,7 +712,7 @@
             this.themThanhVienDongQuy.CustomBorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.themThanhVienDongQuy.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.themThanhVienDongQuy.ForeColor = System.Drawing.Color.Black;
-            this.themThanhVienDongQuy.Location = new System.Drawing.Point(534, 415);
+            this.themThanhVienDongQuy.Location = new System.Drawing.Point(513, 415);
             this.themThanhVienDongQuy.Name = "themThanhVienDongQuy";
             this.themThanhVienDongQuy.Size = new System.Drawing.Size(360, 147);
             this.themThanhVienDongQuy.TabIndex = 30;
