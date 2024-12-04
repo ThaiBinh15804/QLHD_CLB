@@ -61,7 +61,7 @@ namespace QLHD_CLB
         private void LoadDataToGunaChart()
         {
             // Kết nối tới SQL Server
-            string connectionString = @"Data Source = MSI\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
             string query = @"
         SELECT 
             FORMAT(NgayThucHien, 'yyyy-MM') AS Thang, 
