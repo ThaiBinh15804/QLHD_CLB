@@ -64,6 +64,18 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormBanCLB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,9 +175,29 @@
     <Compile Include="tk1.Designer.cs">
       <DependentUpon>tk1.cs</DependentUpon>
     </Compile>
+    <Compile Include="tk2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tk2.Designer.cs">
+      <DependentUpon>tk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tk3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tk3.Designer.cs">
+      <DependentUpon>tk3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBanCLB.resx">
       <DependentUpon>FormBanCLB.cs</DependentUpon>
@@ -221,6 +253,12 @@
     </Compile>
     <EmbeddedResource Include="tk1.resx">
       <DependentUpon>tk1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tk2.resx">
+      <DependentUpon>tk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tk3.resx">
+      <DependentUpon>tk3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

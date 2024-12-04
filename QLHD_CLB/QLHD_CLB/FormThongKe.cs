@@ -239,17 +239,89 @@ namespace QLHD_CLB
                 MessageBox.Show("Данных не достаточно.", "Ошибка");
         }
 
-        private void ThongKeGioiTinh()
+        private void ThongKeTaiTroDongQuyChiTieuCacThang()
         {
-            // Câu truy vấn SQL để lấy dữ liệu thống kê giới tính
-            string query = @"SELECT 
-                     GioiTinh,
-                     COUNT(*) AS SoLuong
-                     FROM ThanhVien
-                     GROUP BY GioiTinh";
-            DataTable dt = db.getSqlDataAdapter(query);
-            
-            ChartPie(gunaChart2, dt, "Thống kê giới tính thành viên");
+            // Kết nối đến SQL Server
+            string connectionString = @"Data Source = PHAMTHUAN\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string procedureName = "GetFinancialSummary";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Mở kết nối đến cơ sở dữ liệu
+                connection.Open();
+
+                // Tạo SqlCommand để gọi stored procedure
+                SqlCommand command = new SqlCommand(procedureName, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Thực thi procedure và lấy dữ liệu
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Kiểm tra nếu có dữ liệu trả về
+                if (reader.HasRows)
+                {
+                    // Chỉ đọc dòng đầu tiên
+                    reader.Read();
+
+                    // Tạo datasets cho biểu đồ
+                    GunaBarDataset taiTroDataset = new GunaBarDataset
+                    {
+                        Label = "Tài Trợ (Hiện Kim)",
+                        FillColors = new ColorCollection()
+                    };
+
+                    GunaBarDataset chiTieuDataset = new GunaBarDataset
+                    {
+                        Label = "Chi Tiêu",
+                        FillColors = new ColorCollection()
+                    };
+
+                    GunaBarDataset dongQuyDataset = new GunaBarDataset
+                    {
+                        Label = "Đóng Quỹ",
+                        FillColors = new ColorCollection()
+                    };
+
+                    // Đọc dữ liệu từ dòng đầu tiên
+                    string namThang = reader["Năm/Tháng"].ToString();
+                    decimal tongTienTaiTro = Convert.ToDecimal(reader["Tổng Số Tiền Đóng Góp (Hiện Kim)"]);
+                    decimal tongTienChiTieu = Convert.ToDecimal(reader["Tổng Số Tiền Thực Chi"]);
+                    decimal tongTienDongQuy = Convert.ToDecimal(reader["Tổng Số Tiền Đã Đóng"]);
+
+                    // Tạo màu sắc cho từng tháng
+                    Random random = new Random();
+                    Color monthColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+
+                    // Thêm dữ liệu vào datasets
+                    taiTroDataset.DataPoints.Add(namThang, (double)tongTienTaiTro);
+                    chiTieuDataset.DataPoints.Add(namThang, (double)tongTienChiTieu);
+                    dongQuyDataset.DataPoints.Add(namThang, (double)tongTienDongQuy);
+
+                    // Đặt màu cho từng cột
+                    taiTroDataset.FillColors.Add(monthColor);
+                    chiTieuDataset.FillColors.Add(Color.FromArgb(Math.Max(0, monthColor.R - 50), Math.Max(0, monthColor.G - 50), Math.Max(0, monthColor.B - 50)));
+                    dongQuyDataset.FillColors.Add(Color.FromArgb(Math.Max(0, monthColor.R - 100), Math.Max(0, monthColor.G - 100), Math.Max(0, monthColor.B - 100)));
+
+                    // Gán các datasets vào biểu đồ
+                    gunaChart2.Datasets.Clear();
+                    gunaChart2.Datasets.Add(taiTroDataset);
+                    gunaChart2.Datasets.Add(chiTieuDataset);
+                    gunaChart2.Datasets.Add(dongQuyDataset);
+
+                    // Cấu hình biểu đồ
+                    gunaChart2.XAxes.Display = true;  // Hiển thị trục X
+                    gunaChart2.YAxes.Display = true;  // Hiển thị trục Y
+
+                    // Cập nhật biểu đồ
+                    gunaChart2.Update();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu.");
+                }
+            }
         }
 
         private void ThongKeDongQuy()
@@ -295,7 +367,7 @@ namespace QLHD_CLB
 
             LocThanhVienTheoThang();
             HienThiThanhVienTheoThang();
-            ThongKeGioiTinh();
+            ThongKeTaiTroDongQuyChiTieuCacThang();
             ThongKeSuKienSapDienRaHoacDangDienRa();
             ThongKeDongQuy();
         }
@@ -303,6 +375,16 @@ namespace QLHD_CLB
         private void btn_tk1_Click(object sender, EventArgs e)
         {
             parent.container(new tk1());
+        }
+
+        private void btn_tk3_Click(object sender, EventArgs e)
+        {
+            parent.container(new tk3());
+        }
+
+        private void btn_tk2_Click(object sender, EventArgs e)
+        {
+            parent.container(new tk2());
         }
     }
 }
