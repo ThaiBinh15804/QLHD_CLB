@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -368,12 +369,28 @@ namespace QLHD_CLB
 
         }
 
+        private void HideTabPage(TabControl tabControl, TabPage tabPage)
+        {
+            tabControl.TabPages.Remove(tabPage); // Loại bỏ TabPage khỏi TabControl
+        }
+
+        private void ShowTabPage(TabControl tabControl, TabPage tabPage)
+        {
+            tabControl.TabPages.Add(tabPage); // Thêm TabPage vào lại TabControl
+        }
+
         private void FormSuKien_ChiTiet_Load(object sender, EventArgs e)
         {
             LoadTabThongTin();
             LoadTabTaiTro();
             LoadTabChiTieu();
             LoadTabPhanCong();
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV004"|| GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                HideTabPage(guna2TabControl1, tabPage2);
+                HideTabPage(guna2TabControl1, tabPage3);
+            }    
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -920,8 +937,22 @@ namespace QLHD_CLB
 
         }
 
+        private string Ban_NguoiDung()
+        {
+            string ban = "SELECT TOP 1 MaBan FROM DamNhiem WHERE MaNguoiDung = '" + GlobalValue.Ma_NguoiDung + "' ORDER BY MaBan ASC";
+            DBConnect data = new DBConnect();
+ 
+            return data.getScalar(ban).ToString();
+        }
+
         private void btnThem_PC_Click(object sender, EventArgs e)
         {
+            if (GlobalValue.ChucVu_NguoiDung == "CV003" || GlobalValue.ChucVu_NguoiDung == "CV004")
+            {
+                MessageBox.Show("Bạn không có quyền thêm phân công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
+
             string maban = cbBan_PC.SelectedValue.ToString();
             string nhiemvu = txtNhiemVu_PC.Text;
             string ngayht = dateNgayHT_PC.Checked ? dateNgayHT_PC.Value.ToString("yyyy-MM-dd") : null;
@@ -1072,7 +1103,6 @@ namespace QLHD_CLB
             }
 
 
-
             string ma = treePhanCong.SelectedNode.Tag.ToString();
 
             if (ma.StartsWith("PC"))
@@ -1115,13 +1145,33 @@ namespace QLHD_CLB
                 btnLuu_CTPC.Enabled = true;
                 btnThem_CTPC.Enabled = false;
 
+                
+
             }
 
+            if (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                SetControlsEnabledFalse(panel2);
+            }    
+
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString() && (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005"))
+            {
+                SetControlsEnabledFalse(panel4);
+                SetControlsEnabledFalse(panel2);
+                return;
+            }
 
         }
 
         private void btnLuu_PC_Click(object sender, EventArgs e)
         {
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV003" || GlobalValue.ChucVu_NguoiDung == "CV004")
+            {
+                MessageBox.Show("Bạn không có quyền sửa phân công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (txtMa_PC.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn phân công cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -1195,6 +1245,12 @@ namespace QLHD_CLB
 
         private void btnXoa_PC_Click(object sender, EventArgs e)
         {
+            if (GlobalValue.ChucVu_NguoiDung == "CV003" || GlobalValue.ChucVu_NguoiDung == "CV004")
+            {
+                MessageBox.Show("Bạn không có quyền sửa phân công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (txtMa_PC.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn phân công cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -1230,6 +1286,12 @@ namespace QLHD_CLB
 
         private void btnThem_CTPC_Click(object sender, EventArgs e)
         {
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString())
+            {
+                MessageBox.Show("Bạn không có quyền thêm chi tiết phân công cho phân công không thuộc về ban của mình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
+
             string mapc = txtMa_PC.Text;
             string matv = cbThanhVien_CTPC.SelectedValue.ToString();
             string nhiemvu = txtNhiemVu_CTPC.Text;
@@ -1302,6 +1364,12 @@ namespace QLHD_CLB
 
         private void btnXoa_CTPC_Click(object sender, EventArgs e)
         {
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString())
+            {
+                MessageBox.Show("Bạn không có quyền xoá chi tiết phân công cho phân công không thuộc về ban của mình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string ma = txtMa_CTPC.Text;
             string sql = "DELETE FROM ChiTietPhanCong WHERE MaChiTietPhanCong = '" + ma + "'";
             DBConnect data = new DBConnect();
@@ -1320,6 +1388,12 @@ namespace QLHD_CLB
 
         private void btnLuu_CTPC_Click(object sender, EventArgs e)
         {
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString())
+            {
+                MessageBox.Show("Bạn không có quyền sửa chi tiết phân công cho phân công không thuộc về ban của mình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string ma = txtMa_CTPC.Text;
             string matv = cbThanhVien_CTPC.SelectedValue.ToString();
             string nhiemvu = txtNhiemVu_CTPC.Text;
@@ -1380,6 +1454,7 @@ namespace QLHD_CLB
 
         private void btnHuy_CTPC_Click(object sender, EventArgs e)
         {
+
             ClearAllTextBoxes(grCTPC);
             ClearAllTextBoxes(grPhanCong);
             cbThanhVien_CTPC.SelectedIndex = 0;
@@ -1411,6 +1486,11 @@ namespace QLHD_CLB
                 formXemAnh.ShowDialog();
             }    
 
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

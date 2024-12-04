@@ -66,9 +66,24 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Ảnh đại diện không tồn tại!");
             }
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                guna2Button2.Enabled = false;
+                guna2Button3.Enabled = false;
+                guna2Button4.Enabled = false;
+                guna2Button8.Enabled = false;
+            }    
+
+            if (GlobalValue.ChucVu_NguoiDung != "CV001")
+            {
+                guna2Button3.Enabled = false;
+                guna2Button4.Enabled = false;
+            }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            string a = GlobalValue.ChucVu_NguoiDung;
             container(new FormThongKe(this));
         }
 
@@ -167,6 +182,12 @@ namespace QLHD_CLB
         {
             FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(this);
             container(formDoiMatKhau);
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            FormXemAnh a = new FormXemAnh(guna2CirclePictureBox1.Image);
+            a.ShowDialog();
         }
     }
 }

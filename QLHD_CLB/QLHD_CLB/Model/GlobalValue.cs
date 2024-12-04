@@ -10,6 +10,7 @@ namespace QLHD_CLB.Model
     {
         public static string HoTen_NguoiDung { get; set; }
         public static string Ma_NguoiDung { get; set; }
+        public static string ChucVu_NguoiDung { get; set; }
         public static string AnhDaiDien_NguoiDung { get; set; }
         public static string MaSuKien { get; set; }
     }

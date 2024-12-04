@@ -295,8 +295,6 @@
     <Content Include="HinhAnh\AnhDaiDien\h5.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h4.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
-    <Content Include="HinhAnh\AnhDaiDien\h1.jpg" />
-    <Content Include="HinhAnh\AnhDaiDien\h2.jpg" />
     <Content Include="Resources\iconSideBar5.png" />
     <Content Include="Resources\iconThongKe1.png" />
     <Content Include="Resources\iconThongKe2.png" />

@@ -51,7 +51,7 @@ namespace QLHD_CLB
 
                 if (existingNode == null)
                 {
-                    // Nếu chưa có thì tạo mới node cho bàn
+                    // Nếu chưa có thì tạo mới node cho ban
                     existingNode = new TreeNode(tenban);
                     existingNode.Tag = new Tuple<string, string, bool>(maban, mota, true);
                     tv_dsban.Nodes.Add(existingNode);
@@ -63,6 +63,8 @@ namespace QLHD_CLB
                     string chucvu = chucvuRow["TenChucVu"].ToString();
                     string hoten = "Chưa gán vai trò";
 
+                    bool isBanQuanLy = tenban.Contains("Ban Quản Lý"); 
+
                     // Kiểm tra xem có người dùng nào đã được gán vào chức vụ này cho bàn hiện tại không
                     DataRow[] rows = dt.Select(string.Format("MaBan = '{0}' AND TenChucVu = '{1}'", maban, chucvu));
 
@@ -73,13 +75,34 @@ namespace QLHD_CLB
 
                     string chucvu_hoten = chucvu + " - " + hoten;
 
-                    // Kiểm tra xem node con cho chức vụ này đã tồn tại chưa
-                    bool nodeExists = existingNode.Nodes.Cast<TreeNode>().Any(n => n.Text == chucvu_hoten);
-
-                    if (!nodeExists)
+                    if (isBanQuanLy)
                     {
-                        // Nếu chưa tồn tại, thêm node con cho chức vụ
-                        existingNode.Nodes.Add(new TreeNode(chucvu_hoten) { Tag = new Tuple<string, string, bool>(maban, mota, false) });
+                        if (chucvu == "Chủ nhiệm CLB" || chucvu == "Phó chủ nhiệm CLB" || chucvu == "Thư Ký")
+                        {
+                            // Kiểm tra xem node con cho chức vụ này đã tồn tại chưa
+                            bool nodeExists = existingNode.Nodes.Cast<TreeNode>().Any(n => n.Text == chucvu_hoten);
+
+                            if (!nodeExists)
+                            {
+                                // Nếu chưa tồn tại, thêm node con cho chức vụ
+                                existingNode.Nodes.Add(new TreeNode(chucvu_hoten) { Tag = new Tuple<string, string, bool>(maban, mota, false) });
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Nếu là ban khác, ta chỉ thêm 2 chức vụ: Trưởng ban và Phó ban
+                        if (chucvu == "Trưởng Ban" || chucvu == "Phó Ban")
+                        {
+                            // Kiểm tra xem node con cho chức vụ này đã tồn tại chưa
+                            bool nodeExists = existingNode.Nodes.Cast<TreeNode>().Any(n => n.Text == chucvu_hoten);
+
+                            if (!nodeExists)
+                            {
+                                // Nếu chưa tồn tại, thêm node con cho chức vụ
+                                existingNode.Nodes.Add(new TreeNode(chucvu_hoten) { Tag = new Tuple<string, string, bool>(maban, mota, false) });
+                            }
+                        }
                     }
                 }
             }
@@ -108,6 +131,16 @@ namespace QLHD_CLB
             }
             HienThiDSBan();
             HienThiDS_ChucVu();
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV002")
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnLuu.Enabled = false;
+                btnLamMoi.Enabled = false;
+            }
+
         }
 
         private string SinhMaBan()
@@ -351,6 +384,7 @@ namespace QLHD_CLB
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            flat = false;
             this.txtTenBan.Clear();
             this.txtMoTa.Clear();
             this.txtChucVu.Clear();

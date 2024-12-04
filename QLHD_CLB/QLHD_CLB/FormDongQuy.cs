@@ -29,6 +29,21 @@ namespace QLHD_CLB
             parentForm = _parent;
         }
 
+        private void SetControlsEnabledFalse(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = false;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledFalse(control);
+                }
+            }
+        }
+
         DBConnect db = new DBConnect();
 
         private void HienThi_DSKeHoachDongQuy()
@@ -136,6 +151,7 @@ namespace QLHD_CLB
             HienThi_DSKeHoachDongQuy();
             HienThi_ComboBoxLocTrangThai();
             HienThi_ComboBoxTrangThai();
+
         }
 
         private void HienThiDSThanhVienDongQuy(string makh)

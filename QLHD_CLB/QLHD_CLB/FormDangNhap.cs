@@ -76,10 +76,10 @@ namespace QLHD_CLB
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            //string tk = txtTK.Text;
-            //string mk = txtMK.Text;
-            string tk = "nguyenvana";
-            string mk = "123456";
+            string tk = txtTK.Text;
+            string mk = txtMK.Text;
+            //string tk = "nguyenvana";
+            //string mk = "123456";
 
             //if (!ValidateInputs())
             //{
@@ -98,6 +98,21 @@ namespace QLHD_CLB
                 GlobalValue.Ma_NguoiDung = dt.Rows[0]["MaNguoiDung"].ToString();
                 GlobalValue.HoTen_NguoiDung = dt.Rows[0]["HoTen"].ToString();
                 GlobalValue.AnhDaiDien_NguoiDung = dt.Rows[0]["AnhDaiDien"].ToString();
+
+                sql = "SELECT * FROM DamNhiem WHERE MaNguoiDung = '"+ GlobalValue.Ma_NguoiDung +"'";
+
+                dt = data.getSqlDataAdapter(sql);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    GlobalValue.ChucVu_NguoiDung = dt.Rows[0]["MaChucVu"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Người dùng này chưa được gán bất kì chức vụ nào!");
+                    return;
+                }
+
                 Message.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                 Message.Show("Đăng nhập thành công");
 
