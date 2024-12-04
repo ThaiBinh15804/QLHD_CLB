@@ -168,5 +168,11 @@ namespace QLHD_CLB
             FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(this);
             container(formDoiMatKhau);
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            FormXemAnh a = new FormXemAnh(guna2CirclePictureBox1.Image);
+            a.ShowDialog();
+        }
     }
 }

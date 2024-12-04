@@ -1180,7 +1180,7 @@
             this.guna2Panel7.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2Panel7.Size = new System.Drawing.Size(332, 264);
+            this.guna2Panel7.Size = new System.Drawing.Size(332, 263);
             this.guna2Panel7.TabIndex = 0;
             // 
             // grTK_CT
@@ -1194,7 +1194,7 @@
             this.grTK_CT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.grTK_CT.Location = new System.Drawing.Point(10, 10);
             this.grTK_CT.Name = "grTK_CT";
-            this.grTK_CT.Size = new System.Drawing.Size(312, 244);
+            this.grTK_CT.Size = new System.Drawing.Size(312, 243);
             this.grTK_CT.TabIndex = 1;
             this.grTK_CT.Text = "Tìm kiếm";
             // 
@@ -1269,10 +1269,10 @@
             // 
             this.guna2Panel8.Controls.Add(this.chart_CT);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel8.Location = new System.Drawing.Point(0, 264);
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 263);
             this.guna2Panel8.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(332, 358);
+            this.guna2Panel8.Size = new System.Drawing.Size(332, 359);
             this.guna2Panel8.TabIndex = 0;
             // 
             // chart_CT
@@ -1285,7 +1285,7 @@
             this.chart_CT.Legend.LabelFont = chartFont1;
             this.chart_CT.Location = new System.Drawing.Point(0, 0);
             this.chart_CT.Name = "chart_CT";
-            this.chart_CT.Size = new System.Drawing.Size(332, 358);
+            this.chart_CT.Size = new System.Drawing.Size(332, 359);
             this.chart_CT.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -1438,9 +1438,9 @@
             this.guna2Panel9.Controls.Add(this.btnSua_CT);
             this.guna2Panel9.Controls.Add(this.btnThem_CT);
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel9.Location = new System.Drawing.Point(544, 3);
+            this.guna2Panel9.Location = new System.Drawing.Point(543, 3);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(107, 354);
+            this.guna2Panel9.Size = new System.Drawing.Size(108, 354);
             this.guna2Panel9.TabIndex = 0;
             // 
             // btnHuy_CT
@@ -1459,7 +1459,7 @@
             this.btnHuy_CT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnHuy_CT.Location = new System.Drawing.Point(14, 284);
             this.btnHuy_CT.Name = "btnHuy_CT";
-            this.btnHuy_CT.Size = new System.Drawing.Size(89, 45);
+            this.btnHuy_CT.Size = new System.Drawing.Size(90, 45);
             this.btnHuy_CT.TabIndex = 0;
             this.btnHuy_CT.Text = "Huỷ";
             this.btnHuy_CT.Click += new System.EventHandler(this.btnHuy_CT_Click);
@@ -1477,7 +1477,7 @@
             this.btnLua_CT.ForeColor = System.Drawing.Color.White;
             this.btnLua_CT.Location = new System.Drawing.Point(14, 220);
             this.btnLua_CT.Name = "btnLua_CT";
-            this.btnLua_CT.Size = new System.Drawing.Size(89, 45);
+            this.btnLua_CT.Size = new System.Drawing.Size(90, 45);
             this.btnLua_CT.TabIndex = 0;
             this.btnLua_CT.Text = "Lưu";
             this.btnLua_CT.Click += new System.EventHandler(this.btnLua_CT_Click);
@@ -1495,7 +1495,7 @@
             this.btnXoa_CT.ForeColor = System.Drawing.Color.White;
             this.btnXoa_CT.Location = new System.Drawing.Point(14, 158);
             this.btnXoa_CT.Name = "btnXoa_CT";
-            this.btnXoa_CT.Size = new System.Drawing.Size(89, 45);
+            this.btnXoa_CT.Size = new System.Drawing.Size(90, 45);
             this.btnXoa_CT.TabIndex = 0;
             this.btnXoa_CT.Text = "Xoá";
             this.btnXoa_CT.Click += new System.EventHandler(this.btnXoa_CT_Click);
@@ -1513,7 +1513,7 @@
             this.btnSua_CT.ForeColor = System.Drawing.Color.White;
             this.btnSua_CT.Location = new System.Drawing.Point(14, 97);
             this.btnSua_CT.Name = "btnSua_CT";
-            this.btnSua_CT.Size = new System.Drawing.Size(89, 45);
+            this.btnSua_CT.Size = new System.Drawing.Size(90, 45);
             this.btnSua_CT.TabIndex = 0;
             this.btnSua_CT.Text = "Sửa";
             this.btnSua_CT.Click += new System.EventHandler(this.btnSua_CT_Click);
@@ -1531,7 +1531,7 @@
             this.btnThem_CT.ForeColor = System.Drawing.Color.White;
             this.btnThem_CT.Location = new System.Drawing.Point(14, 37);
             this.btnThem_CT.Name = "btnThem_CT";
-            this.btnThem_CT.Size = new System.Drawing.Size(89, 45);
+            this.btnThem_CT.Size = new System.Drawing.Size(90, 45);
             this.btnThem_CT.TabIndex = 0;
             this.btnThem_CT.Text = "Thêm";
             this.btnThem_CT.Click += new System.EventHandler(this.btnThem_CT_Click);
@@ -1557,7 +1557,7 @@
             this.grThongTin_ChiTieu.Location = new System.Drawing.Point(3, 10);
             this.grThongTin_ChiTieu.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.grThongTin_ChiTieu.Name = "grThongTin_ChiTieu";
-            this.grThongTin_ChiTieu.Size = new System.Drawing.Size(535, 340);
+            this.grThongTin_ChiTieu.Size = new System.Drawing.Size(534, 340);
             this.grThongTin_ChiTieu.TabIndex = 1;
             this.grThongTin_ChiTieu.Text = "Thông tin chi tiêu";
             // 
@@ -1576,7 +1576,7 @@
             this.dateNgayTT_CT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateNgayTT_CT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateNgayTT_CT.Name = "dateNgayTT_CT";
-            this.dateNgayTT_CT.Size = new System.Drawing.Size(240, 36);
+            this.dateNgayTT_CT.Size = new System.Drawing.Size(239, 36);
             this.dateNgayTT_CT.TabIndex = 6;
             this.dateNgayTT_CT.Value = new System.DateTime(2024, 12, 1, 21, 3, 3, 355);
             // 
@@ -1633,7 +1633,7 @@
             this.guna2HtmlLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(273, 62);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(272, 62);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(112, 27);
             this.guna2HtmlLabel6.TabIndex = 3;
@@ -1667,7 +1667,7 @@
             this.picHoaDon_CT.BorderRadius = 5;
             this.picHoaDon_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picHoaDon_CT.ImageRotate = 0F;
-            this.picHoaDon_CT.Location = new System.Drawing.Point(273, 110);
+            this.picHoaDon_CT.Location = new System.Drawing.Point(272, 110);
             this.picHoaDon_CT.Name = "picHoaDon_CT";
             this.picHoaDon_CT.Size = new System.Drawing.Size(253, 221);
             this.picHoaDon_CT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1688,7 +1688,7 @@
             this.btnUpload_CT.FillColor = System.Drawing.Color.White;
             this.btnUpload_CT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload_CT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnUpload_CT.Location = new System.Drawing.Point(420, 53);
+            this.btnUpload_CT.Location = new System.Drawing.Point(419, 53);
             this.btnUpload_CT.Name = "btnUpload_CT";
             this.btnUpload_CT.Size = new System.Drawing.Size(106, 42);
             this.btnUpload_CT.TabIndex = 0;
@@ -1710,7 +1710,7 @@
             this.cbHTTT_CT.ItemHeight = 30;
             this.cbHTTT_CT.Location = new System.Drawing.Point(17, 84);
             this.cbHTTT_CT.Name = "cbHTTT_CT";
-            this.cbHTTT_CT.Size = new System.Drawing.Size(240, 36);
+            this.cbHTTT_CT.Size = new System.Drawing.Size(239, 36);
             this.cbHTTT_CT.TabIndex = 1;
             // 
             // txtThucChi_CT
@@ -1733,7 +1733,7 @@
             this.txtThucChi_CT.PasswordChar = '\0';
             this.txtThucChi_CT.PlaceholderText = "Thực chi";
             this.txtThucChi_CT.SelectedText = "";
-            this.txtThucChi_CT.Size = new System.Drawing.Size(240, 40);
+            this.txtThucChi_CT.Size = new System.Drawing.Size(239, 40);
             this.txtThucChi_CT.TabIndex = 0;
             // 
             // txtDuChi_CT
@@ -1756,7 +1756,7 @@
             this.txtDuChi_CT.PasswordChar = '\0';
             this.txtDuChi_CT.PlaceholderText = "Dự chi";
             this.txtDuChi_CT.SelectedText = "";
-            this.txtDuChi_CT.Size = new System.Drawing.Size(240, 38);
+            this.txtDuChi_CT.Size = new System.Drawing.Size(239, 38);
             this.txtDuChi_CT.TabIndex = 0;
             // 
             // txtLyDo_CT
@@ -1779,7 +1779,7 @@
             this.txtLyDo_CT.PasswordChar = '\0';
             this.txtLyDo_CT.PlaceholderText = "Lý do chi tiêu";
             this.txtLyDo_CT.SelectedText = "";
-            this.txtLyDo_CT.Size = new System.Drawing.Size(240, 37);
+            this.txtLyDo_CT.Size = new System.Drawing.Size(239, 37);
             this.txtLyDo_CT.TabIndex = 0;
             // 
             // label3
@@ -1944,6 +1944,7 @@
             // 
             // guna2HtmlLabel12
             // 
+            this.guna2HtmlLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Location = new System.Drawing.Point(292, 186);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
