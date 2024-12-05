@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using QLHD_CLB.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using QLHD_CLB.Model;
 using System.IO;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace QLHD_CLB
 {
@@ -92,7 +85,7 @@ namespace QLHD_CLB
         {
             string m = "select count(*) from NguoiDung where MaNguoiDung='" + mand + "'";
             int kq = int.Parse(db.getScalar(m).ToString());
-            if(kq==0)
+            if (kq == 0)
             {
                 return true;
             }
@@ -352,13 +345,13 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Lỗi khi làm mới dữ liệu: " + ex.Message);
             }
-            btnThem.Enabled=true;
+            btnThem.Enabled = true;
         }
 
 
         private void dgvDSNguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvDSNguoiDung_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -416,7 +409,7 @@ namespace QLHD_CLB
                 }
             }
         }
-        
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool isValid = false;
@@ -486,7 +479,7 @@ namespace QLHD_CLB
             if (maNguoiDung != null)
             {
                 txtMaNguoiDung.Text = maNguoiDung;
-            }    
+            }
             txtHoTen.Clear();
             txtTenTK.Clear();
             txtMatKhau.Clear();
@@ -508,7 +501,7 @@ namespace QLHD_CLB
             {
                 // Đường dẫn đến thư mục chứa ảnh
                 string dsFile = Directory.GetParent(Application.StartupPath).Parent.FullName;
-                string folderPath = Path.Combine(dsFile, "HinhAnh");
+                string folderPath = Path.Combine(dsFile, "HinhAnh", "AnhDaiDien");
 
                 // Kiểm tra xem thư mục đã tồn tại chưa, nếu chưa thì tạo mới
                 if (!Directory.Exists(folderPath))

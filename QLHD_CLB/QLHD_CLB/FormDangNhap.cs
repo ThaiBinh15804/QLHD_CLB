@@ -93,6 +93,12 @@ namespace QLHD_CLB
             string sql = "SELECT * FROM NguoiDung WHERE TenTaiKhoan = '" + tk + "' AND MatKhau = '" + mk + "'";
             DataTable dt = data.getSqlDataAdapter(sql);
 
+            if (dt.Rows[0]["TrangThai"].ToString() == "Ngừng hoạt động")
+            {
+                MessageBox.Show("Tài khoản đã ngừng hoạt động");
+                return;
+            }    
+
             if (dt != null && dt.Rows.Count > 0)
             {
                 GlobalValue.Ma_NguoiDung = dt.Rows[0]["MaNguoiDung"].ToString();

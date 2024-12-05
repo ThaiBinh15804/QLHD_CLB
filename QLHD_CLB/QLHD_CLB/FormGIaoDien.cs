@@ -80,7 +80,14 @@ namespace QLHD_CLB
                 guna2Button2.Enabled = false;
                 guna2Button3.Enabled = false;
                 guna2Button4.Enabled = false;
+                guna2Button7.Enabled = false;
             }
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV002")
+            {
+                guna2Button2.Enabled = true;
+                guna2Button7.Enabled = true;
+            }    
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {

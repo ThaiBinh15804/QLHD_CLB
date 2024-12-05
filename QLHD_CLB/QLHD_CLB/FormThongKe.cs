@@ -370,6 +370,13 @@ namespace QLHD_CLB
             ThongKeTaiTroDongQuyChiTieuCacThang();
             ThongKeSuKienSapDienRaHoacDangDienRa();
             ThongKeDongQuy();
+
+            if(GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005")
+            {
+                btn_tk1.Enabled = false;
+                btn_tk2.Enabled = false;
+                btn_tk3.Enabled = false;
+            }
         }
 
         private void btn_tk1_Click(object sender, EventArgs e)

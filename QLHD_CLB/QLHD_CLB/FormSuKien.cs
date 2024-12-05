@@ -112,6 +112,8 @@ namespace QLHD_CLB
             DBConnect data = new DBConnect();
             string sql = "select * from SuKien";
             dgv.DataSource = data.getSqlDataAdapter(sql);
+            dgv.Columns["NganSachDuChi"].DefaultCellStyle.Format = "N0";
+            dgv.Columns["ChiTieuThucTe"].DefaultCellStyle.Format = "N0";
 
             dateTKNgayBD.Checked = false;
             dateTKNgayKT.Checked = false;

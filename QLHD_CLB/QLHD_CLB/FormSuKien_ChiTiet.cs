@@ -196,9 +196,25 @@ namespace QLHD_CLB
                 lbDiaDiem.Text = dt.Rows[0]["DiaDiem"].ToString();
                 lbTgian.Text = "Từ   " + dt.Rows[0]["NgayBatDau"].ToString() + "  đến  " + dt.Rows[0]["NgayKetThuc"].ToString();
                 lbMoTa.Text = dt.Rows[0]["MoTa"].ToString();
-                lbDuChi.Text = dt.Rows[0]["NganSachDuChi"].ToString();
-                lbChiTieu.Text = dt.Rows[0]["ChiTieuThucTe"].ToString();
+                // Xử lý định dạng lbDuChi
+                if (decimal.TryParse(dt.Rows[0]["NganSachDuChi"].ToString(), out decimal nganSachDuChi))
+                {
+                    lbDuChi.Text = nganSachDuChi.ToString("N0");
+                }
+                else
+                {
+                    lbDuChi.Text = "0";
+                }
 
+                // Xử lý định dạng lbChiTieu
+                if (decimal.TryParse(dt.Rows[0]["ChiTieuThucTe"].ToString(), out decimal chiTieuThucTe))
+                {
+                    lbChiTieu.Text = chiTieuThucTe.ToString("N0");
+                }
+                else
+                {
+                    lbChiTieu.Text = "0";
+                }
             }
 
             sql = "SELECT COUNT(*) AS SoLuongPhanCong FROM PhanCong WHERE MaSuKien = '" + GlobalValue.MaSuKien + "';";
@@ -225,9 +241,14 @@ namespace QLHD_CLB
             lbSoNTT.Text = tt;
 
             sql = "SElECT SUM(TongTaiTro) FROM TaiTro WHERE MaSuKien = '" + GlobalValue.MaSuKien + "';";
-            var tongtt = data.getScalar(sql).ToString();
-            lbTongTienTT.Text = tongtt;
-
+            if (decimal.TryParse(data.getScalar(sql).ToString(), out decimal tongTaiTro))
+            {
+                lbTongTienTT.Text = tongTaiTro.ToString("N0");
+            }
+            else
+            {
+                lbTongTienTT.Text = "0";
+            }
         }
 
         private void LoadTabTaiTro()
@@ -239,6 +260,8 @@ namespace QLHD_CLB
             DBConnect data = new DBConnect();
             DataTable dt = data.getSqlDataAdapter(sql);
             dgv.DataSource = dt;
+            dgv.Columns["Hiện kim"].DefaultCellStyle.Format = "N0";
+            dgv.Columns["Tổng tài trợ"].DefaultCellStyle.Format = "N0";
 
             sql = "SELECT MaNhaTaiTro, TenNhaTaiTro FROM NhaTaiTro";
             dt = data.getSqlDataAdapter(sql);
@@ -283,6 +306,8 @@ namespace QLHD_CLB
             DBConnect data = new DBConnect();
             DataTable dt = data.getSqlDataAdapter(sql);
             dgvCT.DataSource = dt;
+            dgvCT.Columns["Dự chi"].DefaultCellStyle.Format = "N0";
+            dgvCT.Columns["Thực chi"].DefaultCellStyle.Format = "N0";
 
             barThucChi.DataPoints.Clear();
             barDuChi.DataPoints.Clear();
@@ -402,6 +427,11 @@ namespace QLHD_CLB
             {
                 HideTabPage(guna2TabControl1, tabPage2);
                 HideTabPage(guna2TabControl1, tabPage3);
+            }    
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV003")
+            {
+                HideTabPage(guna2TabControl1, tabPage4);
             }    
         }
 
@@ -1402,7 +1432,7 @@ namespace QLHD_CLB
 
         private void btnLuu_CTPC_Click(object sender, EventArgs e)
         {
-            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString())
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString() && (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005"))
             {
                 MessageBox.Show("Bạn không có quyền sửa chi tiết phân công cho phân công không thuộc về ban của mình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

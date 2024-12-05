@@ -92,7 +92,7 @@ namespace QLHD_CLB
                     else
                     {
                         // Nếu là ban khác, ta chỉ thêm 2 chức vụ: Trưởng ban và Phó ban
-                        if (chucvu == "Trưởng Ban" || chucvu == "Phó Ban")
+                        if (!(chucvu == "Chủ nhiệm CLB" || chucvu == "Phó chủ nhiệm CLB" || chucvu == "Thư Ký"))
                         {
                             // Kiểm tra xem node con cho chức vụ này đã tồn tại chưa
                             bool nodeExists = existingNode.Nodes.Cast<TreeNode>().Any(n => n.Text == chucvu_hoten);
@@ -113,7 +113,7 @@ namespace QLHD_CLB
         private void HienThiDS_ChucVu()
         {
 
-            string chuoi2 = "select * from NguoiDung";
+            string chuoi2 = "select * from NguoiDung WHERE TrangThai = N'Đang hoạt động'";
             DataTable dt2 = db.getSqlDataAdapter(chuoi2);
             cbb_HoTen.DataSource = dt2;
             cbb_HoTen.DisplayMember = "HoTen";
