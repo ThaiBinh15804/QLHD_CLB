@@ -1023,6 +1023,8 @@ namespace QLHD_CLB
 
             MessageBox.Show("Click vào kế hoạch trên tree view để chỉnh sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            treePhanCong.SelectedNode = null;
+
             string sql = "SELECT * FROM ThanhVien";
             DBConnect data = new DBConnect();
             DataTable dt1 = data.getSqlDataAdapter(sql);
@@ -1286,7 +1288,7 @@ namespace QLHD_CLB
 
         private void btnThem_CTPC_Click(object sender, EventArgs e)
         {
-            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString())
+            if (Ban_NguoiDung() != cbBan_PC.SelectedValue.ToString() && (GlobalValue.ChucVu_NguoiDung == "CV004" || GlobalValue.ChucVu_NguoiDung == "CV005"))
             {
                 MessageBox.Show("Bạn không có quyền thêm chi tiết phân công cho phân công không thuộc về ban của mình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

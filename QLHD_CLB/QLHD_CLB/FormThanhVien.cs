@@ -122,6 +122,31 @@ namespace QLHD_CLB
             comboBox_DSBan.DisplayMember = "TenBan";
             comboBox_DSBan.ValueMember = "MaBan";
             comboBox_DSBan.SelectedIndex = 0;
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV004")
+            {
+                comboBox_DSBan.DataSource = null;
+                query = "SELECT D.MaBan, B.TenBan, D.MaChucVu FROM DamNhiem D JOIN Ban B ON D.MaBan = B.MaBan WHERE MaNguoiDung = '" + GlobalValue.Ma_NguoiDung + "'";
+                DataTable dt1 = db.getSqlDataAdapter(query);
+
+                foreach (DataRow r in dt1.Rows)
+                {
+                    if (r["MaChucVu"].ToString() == "CV004")
+                    {
+                        comboBox_DSBan.DataSource = dt1;
+                        comboBox_DSBan.DisplayMember = "TenBan";
+                        comboBox_DSBan.ValueMember = "MaBan";
+
+                        break;
+                    }
+
+                }
+
+                comboBox_DSBan.Enabled = false;
+                comboBox_DSBan.SelectedIndex = 0;
+            }    
+
+            
         }
 
         private void HienThi_ComboBoxLocBan()
@@ -155,9 +180,23 @@ namespace QLHD_CLB
             }
         }
 
+        private void SetControlsEnabledTrue(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                // Đặt thuộc tính Enabled = false
+                control.Enabled = true;
+
+                // Nếu control chứa các control con, gọi đệ quy
+                if (control.HasChildren)
+                {
+                    SetControlsEnabledTrue(control);
+                }
+            }
+        }
+
         private void FormThanhVien_Load(object sender, EventArgs e)
         {
-            HienThi_ComboBoxDSBan();
             HienThi_ComboBoxLocBan();
             HienThi_ComboBoxTrangThai();
             HienThi_DSThanhVien();
@@ -176,6 +215,13 @@ namespace QLHD_CLB
                 SetControlsEnabledFalse(guna2GroupBox1);
                 SetControlsEnabledFalse(groupBox1);
             }    
+
+            if (GlobalValue.ChucVu_NguoiDung == "CV004")
+            {
+                SetControlsEnabledTrue(guna2GroupBox1);
+                SetControlsEnabledTrue(groupBox1);
+            }    
+            HienThi_ComboBoxDSBan();
         }
 
         private void ResetForm()

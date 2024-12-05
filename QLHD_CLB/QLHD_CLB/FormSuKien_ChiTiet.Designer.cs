@@ -2254,6 +2254,7 @@
             // 
             // guna2HtmlLabel10
             // 
+            this.guna2HtmlLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(366, 49);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
