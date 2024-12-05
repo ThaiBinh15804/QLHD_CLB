@@ -143,7 +143,7 @@
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(217, 143);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(211, 143);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -192,9 +192,9 @@
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(142)))), ((int)(((byte)(136)))));
             this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(669, 3);
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(653, 3);
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(217, 143);
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(212, 143);
             this.guna2CustomGradientPanel4.TabIndex = 1;
             // 
             // guna2PictureBox2
@@ -243,9 +243,9 @@
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(141)))), ((int)(((byte)(246)))));
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(226, 3);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(220, 3);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(215, 143);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(210, 143);
             this.guna2CustomGradientPanel2.TabIndex = 3;
             // 
             // guna2PictureBox4
@@ -294,9 +294,9 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(190)))), ((int)(((byte)(194)))));
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(447, 3);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(436, 3);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(216, 143);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(211, 143);
             this.guna2CustomGradientPanel3.TabIndex = 2;
             // 
             // guna2PictureBox3
@@ -343,7 +343,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 505);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(886, 430);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(865, 430);
             this.guna2GroupBox1.TabIndex = 4;
             this.guna2GroupBox1.Text = "Thống kê chi tiêu các tháng";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -357,7 +357,7 @@
             this.gunaChart1.Legend.LabelFont = chartFont1;
             this.gunaChart1.Location = new System.Drawing.Point(0, 40);
             this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(886, 390);
+            this.gunaChart1.Size = new System.Drawing.Size(865, 390);
             this.gunaChart1.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -432,7 +432,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(868, 149);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // guna2GroupBox3
@@ -445,7 +445,7 @@
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(12, 203);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(886, 280);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(865, 280);
             this.guna2GroupBox3.TabIndex = 10;
             this.guna2GroupBox3.Text = "Các sự kiện sắp diễn ra và đang diễn ra";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -481,7 +481,7 @@
             this.dtg_dsSuKien.RowHeadersVisible = false;
             this.dtg_dsSuKien.RowHeadersWidth = 51;
             this.dtg_dsSuKien.RowTemplate.Height = 40;
-            this.dtg_dsSuKien.Size = new System.Drawing.Size(886, 240);
+            this.dtg_dsSuKien.Size = new System.Drawing.Size(865, 240);
             this.dtg_dsSuKien.TabIndex = 0;
             this.dtg_dsSuKien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_dsSuKien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -606,7 +606,7 @@
             this.gunaChart3.Legend.LabelFont = chartFont9;
             this.gunaChart3.Location = new System.Drawing.Point(12, 1370);
             this.gunaChart3.Name = "gunaChart3";
-            this.gunaChart3.Size = new System.Drawing.Size(886, 318);
+            this.gunaChart3.Size = new System.Drawing.Size(865, 318);
             this.gunaChart3.TabIndex = 14;
             chartFont10.FontName = "Arial";
             chartFont10.Size = 12;
@@ -676,7 +676,7 @@
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox4.Location = new System.Drawing.Point(486, 1001);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(412, 307);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(391, 307);
             this.guna2GroupBox4.TabIndex = 17;
             this.guna2GroupBox4.Text = "Thống kê ngân sách";
             this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -688,7 +688,7 @@
             this.gunaChart2.Legend.LabelFont = chartFont17;
             this.gunaChart2.Location = new System.Drawing.Point(0, 40);
             this.gunaChart2.Name = "gunaChart2";
-            this.gunaChart2.Size = new System.Drawing.Size(412, 267);
+            this.gunaChart2.Size = new System.Drawing.Size(391, 267);
             this.gunaChart2.TabIndex = 10;
             chartFont18.FontName = "Arial";
             chartFont18.Size = 12;
