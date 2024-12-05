@@ -165,8 +165,10 @@ namespace QLHD_CLB
             inputTimKiem.Focus();
 
             DataTable dt = new DataTable();
+            dt.Columns.Add("Tên sự kiện");
             dt.Columns.Add("Nhiệm vụ phân công");
             dt.Columns.Add("Mô tả");
+            dt.Columns.Add("Ngày hoàn thành");
             dtg_hdthamgia.DataSource = dt;
 
             if (!(GlobalValue.ChucVu_NguoiDung == "CV001" || GlobalValue.ChucVu_NguoiDung == "CV002"))
@@ -316,11 +318,13 @@ namespace QLHD_CLB
                 }
 
 
-                string queryDSThamGiaHoatDong = "SELECT DISTINCT pc.NhiemVu AS N'Nhiệm vụ phân công', pc.MoTa AS N'Mô tả' FROM ThanhVien tv JOIN ChiTietPhanCong ctp ON tv.MaThanhVien = ctp.MaThanhVien JOIN PhanCong pc ON ctp.MaPhanCong = pc.MaPhanCong WHERE tv.MaThanhVien ='" + inputMaTV.Text + "'";
+                string queryDSThamGiaHoatDong = "SELECT DISTINCT sk.TenSuKien as N'Tên sự kiện', pc.NhiemVu AS N'Nhiệm vụ phân công', pc.MoTa AS N'Mô tả', ctp.NgayHoanThanh as N'Ngày hoàn thành' FROM ThanhVien tv JOIN ChiTietPhanCong ctp ON tv.MaThanhVien = ctp.MaThanhVien JOIN PhanCong pc ON ctp.MaPhanCong = pc.MaPhanCong JOIN SuKien sk on pc.MaSuKien = sk.MaSuKien WHERE tv.MaThanhVien ='" + inputMaTV.Text + "'";
                 DataTable dt = db.getSqlDataAdapter(queryDSThamGiaHoatDong);
                 dtg_hdthamgia.DataSource = dt;
                 dtg_hdthamgia.Columns[0].ReadOnly = true;
                 dtg_hdthamgia.Columns[1].ReadOnly = true;
+                dtg_hdthamgia.Columns[2].ReadOnly = true;
+                dtg_hdthamgia.Columns[3].ReadOnly = true;
                 comboBox_locBan.SelectedIndexChanged += comboBox_locBan_SelectedIndexChanged; // Bật lại sự kiện
             }
         }
