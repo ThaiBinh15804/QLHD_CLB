@@ -416,7 +416,7 @@ namespace QLHD_CLB
                 }
             }
         }
-
+        
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool isValid = false;
@@ -482,6 +482,11 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
             }
+            string maNguoiDung = SinhMaNguoiDung();
+            if (maNguoiDung != null)
+            {
+                txtMaNguoiDung.Text = maNguoiDung;
+            }    
             txtHoTen.Clear();
             txtTenTK.Clear();
             txtMatKhau.Clear();

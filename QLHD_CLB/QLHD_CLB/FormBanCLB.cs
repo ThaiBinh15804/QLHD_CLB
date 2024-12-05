@@ -251,7 +251,8 @@ namespace QLHD_CLB
                     txtTenBan.Text = selectedNode.Text;
                     txtMoTa.Text = moTaBan;
                     txtChucVu.Clear();
-                    cbb_HoTen.SelectedIndex = -1;  
+                    cbb_HoTen.SelectedIndex = -1;
+                    
                 }
                 else 
                 {
@@ -263,6 +264,7 @@ namespace QLHD_CLB
                         txtChucVu.Text = parts[0].Trim();  
                         cbb_HoTen.SelectedItem = parts[1].Trim();  
                     }
+                    cbb_HoTen.Enabled = true;
                 }
             }
         }
@@ -606,7 +608,7 @@ namespace QLHD_CLB
             string maBan2 = SinhMaBan();
             if (maBan2 != null)
             {
-                txtMaBan.Text = maBan;
+                txtMaBan.Text = maBan2;
             }
             btnThem.Enabled = true;
         }

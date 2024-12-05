@@ -61,7 +61,7 @@ namespace QLHD_CLB
         private void LoadDataToGunaChart()
         {
             // Kết nối tới SQL Server
-            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string connectionString = @"Data Source = PHAMTHUAN\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
             string query = @"
         SELECT 
             FORMAT(NgayThucHien, 'yyyy-MM') AS Thang, 
@@ -242,7 +242,7 @@ namespace QLHD_CLB
         private void ThongKeTaiTroDongQuyChiTieuCacThang()
         {
             // Kết nối đến SQL Server
-            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
+            string connectionString = "Data Source = PHAMTHUAN\\MSSQLSERVER01; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
             string procedureName = "GetFinancialSummary";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

@@ -256,10 +256,12 @@ namespace QLHD_CLB
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
             }
-            if (maChucVu != null)
+            string maChucVu2 = SinhMaChucVu();
+            if (maChucVu2 != null)
             {
-                txtMaChucVu.Text = maChucVu;
+                txtMaChucVu.Text = maChucVu2;
             }
+
             this.txtTenChucVu.Clear();
             this.txtMoTa.Clear();
             btnThem.Enabled = true;

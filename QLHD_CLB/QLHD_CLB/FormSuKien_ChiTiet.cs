@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using QLHD_CLB.Model;
+using System.Data.SqlClient;
+using Guna.Charts.WinForms;
 
 namespace QLHD_CLB
 {
@@ -272,8 +274,6 @@ namespace QLHD_CLB
             cbHangTT.ValueMember = "Key";
 
             cbHangTT.SelectedIndex = -1;
-
-
         }
 
         private void LoadTabChiTieu()
@@ -286,6 +286,10 @@ namespace QLHD_CLB
 
             barThucChi.DataPoints.Clear();
             barDuChi.DataPoints.Clear();
+            // Danh sách màu sắc
+            Color[] thucChiColors = { Color.FromArgb(255, 99, 132), Color.FromArgb(54, 162, 235) }; // Màu cho Thực Chi
+            Color[] duChiColors = { Color.FromArgb(75, 192, 192), Color.FromArgb(255, 206, 86) };   // Màu cho Dự Chi
+            int colorIndex = 0;
 
             foreach (DataRow r in dt.Rows)
             {
@@ -305,8 +309,16 @@ namespace QLHD_CLB
                 }
 
                 // Thêm dữ liệu vào chart
-                barThucChi.DataPoints.Add(r["Lý do chi tiêu"].ToString(), thucChi);
-                barDuChi.DataPoints.Add(r["Lý do chi tiêu"].ToString(), duChi);
+                string label = r["Lý do chi tiêu"].ToString();
+                barThucChi.DataPoints.Add(label, thucChi);
+                barDuChi.DataPoints.Add(label, duChi);
+
+                // Gán màu sắc cho từng cột
+                barThucChi.FillColors.Add(thucChiColors[colorIndex % thucChiColors.Length]);
+                barDuChi.FillColors.Add(duChiColors[colorIndex % duChiColors.Length]);
+
+                colorIndex++;
+                
             }
 
             dateNgayTT_CT.Checked = false;
@@ -1492,7 +1504,7 @@ namespace QLHD_CLB
 
         private void tabPage4_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
