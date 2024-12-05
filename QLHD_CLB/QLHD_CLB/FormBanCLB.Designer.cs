@@ -71,6 +71,8 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox2.Controls.Add(this.cbb_HoTen);
             this.guna2GroupBox2.Controls.Add(this.btnLamMoi);
             this.guna2GroupBox2.Controls.Add(this.btnThem);
@@ -84,7 +86,6 @@
             this.guna2GroupBox2.Controls.Add(this.txtMaBan);
             this.guna2GroupBox2.Controls.Add(this.label2);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Silver;
-            this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
@@ -115,6 +116,7 @@
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLamMoi.BorderColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnLamMoi.BorderRadius = 5;
             this.btnLamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -132,6 +134,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.BorderColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnThem.BorderRadius = 5;
             this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;

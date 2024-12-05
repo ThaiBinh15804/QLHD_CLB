@@ -124,12 +124,6 @@
     <Compile Include="FormNhaTaiTro.Designer.cs">
       <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNhaTaiTroCu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormNhaTaiTroCu.Designer.cs">
-      <DependentUpon>FormNhaTaiTroCu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSuKien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,9 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhaTaiTro.resx">
       <DependentUpon>FormNhaTaiTro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormNhaTaiTroCu.resx">
-      <DependentUpon>FormNhaTaiTroCu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuKien.resx">
       <DependentUpon>FormSuKien.cs</DependentUpon>

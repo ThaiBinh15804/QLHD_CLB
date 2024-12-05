@@ -77,6 +77,7 @@ namespace QLHD_CLB
 
             if (GlobalValue.ChucVu_NguoiDung != "CV001")
             {
+                guna2Button2.Enabled = false;
                 guna2Button3.Enabled = false;
                 guna2Button4.Enabled = false;
             }
