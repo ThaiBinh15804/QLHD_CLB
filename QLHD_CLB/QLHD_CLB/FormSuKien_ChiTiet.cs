@@ -13,6 +13,7 @@ using Guna.UI2.WinForms;
 using QLHD_CLB.Model;
 using System.Data.SqlClient;
 using Guna.Charts.WinForms;
+using System.Diagnostics.Eventing.Reader;
 
 namespace QLHD_CLB
 {
@@ -259,6 +260,8 @@ namespace QLHD_CLB
 
             DBConnect data = new DBConnect();
             DataTable dt = data.getSqlDataAdapter(sql);
+
+            DataTable tmp = dt.Copy();
             dgv.DataSource = dt;
             dgv.Columns["Hiện kim"].DefaultCellStyle.Format = "N0";
             dgv.Columns["Tổng tài trợ"].DefaultCellStyle.Format = "N0";
@@ -297,6 +300,14 @@ namespace QLHD_CLB
             cbHangTT.ValueMember = "Key";
 
             cbHangTT.SelectedIndex = -1;
+
+            if (GlobalValue.TrangThai_SuKien == "Ngừng hoạt động")
+            {
+                LienKet_TaiTro(dgv.DataSource as DataTable);
+                SetControlsEnabledFalse(guna2Panel6);
+
+                SetControlsEnabledFalse(grThongTin);
+            }
         }
 
         private void LoadTabChiTieu()
@@ -343,7 +354,7 @@ namespace QLHD_CLB
                 barDuChi.FillColors.Add(duChiColors[colorIndex % duChiColors.Length]);
 
                 colorIndex++;
-                
+
             }
 
             dateNgayTT_CT.Checked = false;
@@ -358,6 +369,13 @@ namespace QLHD_CLB
             cbHTTT_CT.Items.Add("Chuyển khoản");
             cbHTTT_CT.Items.Add("Tiền mặt");
 
+            if (GlobalValue.TrangThai_SuKien == "Ngừng hoạt động")
+            {
+                LienKet_ChiTieu(dgvCT.DataSource as DataTable);
+                SetControlsEnabledFalse(grThongTin_ChiTieu);
+
+                SetControlsEnabledFalse(guna2Panel9);
+            }
         }
 
         private void LoadTabPhanCong()
@@ -404,6 +422,15 @@ namespace QLHD_CLB
 
             cbBan_PC.SelectedIndex = 0;
 
+
+            if (GlobalValue.TrangThai_SuKien == "Ngừng hoạt động")
+            {
+                isEditPhanCong = true;
+                SetControlsEnabledFalse(panel2);
+
+                SetControlsEnabledFalse(panel4);
+            }
+
         }
 
         private void HideTabPage(TabControl tabControl, TabPage tabPage)
@@ -422,7 +449,7 @@ namespace QLHD_CLB
             LoadTabTaiTro();
             LoadTabChiTieu();
             LoadTabPhanCong();
-
+            
             if (GlobalValue.ChucVu_NguoiDung == "CV004"|| GlobalValue.ChucVu_NguoiDung == "CV005")
             {
                 HideTabPage(guna2TabControl1, tabPage2);
@@ -432,7 +459,8 @@ namespace QLHD_CLB
             if (GlobalValue.ChucVu_NguoiDung == "CV003")
             {
                 HideTabPage(guna2TabControl1, tabPage4);
-            }    
+            }
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -1146,8 +1174,41 @@ namespace QLHD_CLB
                 return;
             }
 
-
             string ma = treePhanCong.SelectedNode.Tag.ToString();
+
+            if (GlobalValue.TrangThai_SuKien == "Ngừng hoạt động")
+            {
+                if (ma.StartsWith("PC"))
+                {
+                    string sql = "SELECT * FROM PhanCong WHERE MaPhanCong = '" + treePhanCong.SelectedNode.Tag + "'";
+                    DBConnect data = new DBConnect();
+                    DataTable dt = data.getSqlDataAdapter(sql);
+                    LienKet_PhanCong(dt);
+                }    
+                else
+                {
+                    string sql = "SELECT * FROM ThanhVien";
+                    DBConnect data = new DBConnect();
+                    DataTable dt1 = data.getSqlDataAdapter(sql);
+
+                    dt1.Columns.Add("DisplayMember", typeof(string));
+                    foreach (DataRow row in dt1.Rows)
+                    {
+                        row["DisplayMember"] = row["MaThanhVien"].ToString() + " - " + row["HoTen"].ToString();
+                    }
+
+                    cbThanhVien_CTPC.DataSource = dt1;
+                    cbThanhVien_CTPC.DisplayMember = "DisplayMember";
+                    cbThanhVien_CTPC.ValueMember = "MaThanhVien";
+
+                    sql = "SELECT * FROM ChiTietPhanCong WHERE MaChiTietPhanCong = '" + treePhanCong.SelectedNode.Tag + "'";
+                    
+                    DataTable dt = data.getSqlDataAdapter(sql);
+                    LienKet_CTPhanCong(dt);
+                }
+                return;
+            }    
+
 
             if (ma.StartsWith("PC"))
             {

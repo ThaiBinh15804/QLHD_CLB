@@ -13,5 +13,6 @@ namespace QLHD_CLB.Model
         public static string ChucVu_NguoiDung { get; set; }
         public static string AnhDaiDien_NguoiDung { get; set; }
         public static string MaSuKien { get; set; }
+        public static string TrangThai_SuKien { get; set; }
     }
 }

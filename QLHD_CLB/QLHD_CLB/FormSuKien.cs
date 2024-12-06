@@ -448,6 +448,23 @@ namespace QLHD_CLB
             txtMaSK.DataBindings.Clear();
             txtMaSK.DataBindings.Add("Text", dgv.DataSource, "MaSuKien");
             GlobalValue.MaSuKien = txtMaSK.Text;
+
+            string sql = "SELECT * FROM SuKien WHERE MaSuKien = '" + txtMaSK.Text + "'";
+
+            DBConnect data = new DBConnect();
+            DataTable dt = data.getSqlDataAdapter(sql);
+
+            DateTime nkt = DateTime.Parse(dt.Rows[0]["NgayKetThuc"].ToString());
+
+            if (nkt < DateTime.Now)
+            {
+                GlobalValue.TrangThai_SuKien = "Ngừng hoạt động";
+            }    
+            else
+            {
+                GlobalValue.TrangThai_SuKien = "Đang hoạt động";
+            }    
+
             parentForm.container(new FormSuKien_ChiTiet(parentForm));
         }
 
