@@ -61,18 +61,18 @@ namespace QLHD_CLB
         private void LoadDataToGunaChart()
         {
             // Kết nối tới SQL Server
-            string connectionString = @"Data Source = THAIBINH-LAPTOP; Initial Catalog = QuanLyCauLacBo; User ID = sa; Password = 123";
-            string query = @"
-        SELECT 
-            FORMAT(NgayThucHien, 'yyyy-MM') AS Thang, 
-            SUM(DuChi) AS TongDuChi, 
-            SUM(ThucChi) AS TongThucChi
-        FROM 
-            ChiTieu
-        GROUP BY 
-            FORMAT(NgayThucHien, 'yyyy-MM')
-        ORDER BY 
-            Thang";
+            string connectionString = "Data Source=THAIBINH-LAPTOP; Initial Catalog=QuanLyCauLacBo; User ID=sa; Password=123";
+            string query =
+            "SELECT " +
+            "FORMAT(NgayThucHien, 'yyyy-MM') AS Thang, " +
+            "SUM(DuChi) AS TongDuChi, " +
+            "SUM(ThucChi) AS TongThucChi " +
+            "FROM " +
+            "ChiTieu " +
+            "GROUP BY " +
+            "FORMAT(NgayThucHien, 'yyyy-MM') " +
+            "ORDER BY " +
+            "Thang";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
