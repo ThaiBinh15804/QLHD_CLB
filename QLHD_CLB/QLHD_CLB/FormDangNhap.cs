@@ -144,5 +144,21 @@ namespace QLHD_CLB
         {
 
         }
+
+        private void eyeHide_Click(object sender, EventArgs e)
+        {
+            txtMK.UseSystemPasswordChar = false;
+            txtMK.PasswordChar = '\0';
+            eyeOpen.Visible = true;
+            eyeHide.Visible = false;
+        }
+
+        private void eyeOpen_Click(object sender, EventArgs e)
+        {
+            txtMK.UseSystemPasswordChar = true;
+            eyeOpen.Visible = false;
+            eyeHide.Visible = true;
+        }
+
     }
 }

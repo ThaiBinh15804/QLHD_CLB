@@ -198,7 +198,8 @@ namespace QLHD_CLB
                 lbTgian.Text = "Từ   " + dt.Rows[0]["NgayBatDau"].ToString() + "  đến  " + dt.Rows[0]["NgayKetThuc"].ToString();
                 lbMoTa.Text = dt.Rows[0]["MoTa"].ToString();
                 // Xử lý định dạng lbDuChi
-                if (decimal.TryParse(dt.Rows[0]["NganSachDuChi"].ToString(), out decimal nganSachDuChi))
+                decimal nganSachDuChi;
+                if (decimal.TryParse(dt.Rows[0]["NganSachDuChi"].ToString(), out nganSachDuChi))
                 {
                     lbDuChi.Text = nganSachDuChi.ToString("N0");
                 }
@@ -207,8 +208,9 @@ namespace QLHD_CLB
                     lbDuChi.Text = "0";
                 }
 
+                decimal chiTieuThucTe;
                 // Xử lý định dạng lbChiTieu
-                if (decimal.TryParse(dt.Rows[0]["ChiTieuThucTe"].ToString(), out decimal chiTieuThucTe))
+                if (decimal.TryParse(dt.Rows[0]["ChiTieuThucTe"].ToString(), out chiTieuThucTe))
                 {
                     lbChiTieu.Text = chiTieuThucTe.ToString("N0");
                 }
@@ -242,7 +244,8 @@ namespace QLHD_CLB
             lbSoNTT.Text = tt;
 
             sql = "SElECT SUM(TongTaiTro) FROM TaiTro WHERE MaSuKien = '" + GlobalValue.MaSuKien + "';";
-            if (decimal.TryParse(data.getScalar(sql).ToString(), out decimal tongTaiTro))
+            decimal tongTaiTro;
+            if (decimal.TryParse(data.getScalar(sql).ToString(), out tongTaiTro))
             {
                 lbTongTienTT.Text = tongTaiTro.ToString("N0");
             }

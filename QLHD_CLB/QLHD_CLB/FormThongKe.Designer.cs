@@ -28,6 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
@@ -45,9 +63,17 @@
             Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.LPoint lPoint1 = new Guna.Charts.WinForms.LPoint();
             Guna.Charts.WinForms.LPoint lPoint2 = new Guna.Charts.WinForms.LPoint();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,6 +92,12 @@
             Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
             Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.Charts.WinForms.ChartFont chartFont17 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont18 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont19 = new Guna.Charts.WinForms.ChartFont();
@@ -136,6 +168,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtThongKeThanhVien);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2CustomGradientPanel1.CustomizableEdges = customizableEdges3;
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.DodgerBlue;
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.DarkSlateBlue;
@@ -143,16 +176,19 @@
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(195, 143);
+            this.guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(233, 143);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.CustomizableEdges = customizableEdges1;
             this.guna2PictureBox1.Image = global::QLHD_CLB.Properties.Resources.iconThongKe1;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(149, 39);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2PictureBox1.Size = new System.Drawing.Size(67, 83);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 4;
@@ -187,23 +223,27 @@
             this.guna2CustomGradientPanel4.Controls.Add(this.guna2PictureBox2);
             this.guna2CustomGradientPanel4.Controls.Add(this.txtThongKeNhaTaiTro);
             this.guna2CustomGradientPanel4.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2CustomGradientPanel4.CustomizableEdges = customizableEdges7;
             this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(142)))), ((int)(((byte)(136)))));
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(142)))), ((int)(((byte)(136)))));
             this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(605, 3);
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(717, 3);
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(197, 143);
+            this.guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(234, 143);
             this.guna2CustomGradientPanel4.TabIndex = 1;
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.CustomizableEdges = customizableEdges5;
             this.guna2PictureBox2.Image = global::QLHD_CLB.Properties.Resources.iconThongKe21;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(148, 29);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.guna2PictureBox2.Size = new System.Drawing.Size(74, 83);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 5;
@@ -238,23 +278,27 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2PictureBox4);
             this.guna2CustomGradientPanel2.Controls.Add(this.txtThongKeBan);
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2CustomGradientPanel2.CustomizableEdges = customizableEdges11;
             this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(141)))), ((int)(((byte)(246)))));
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(141)))), ((int)(((byte)(246)))));
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(204, 3);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(242, 3);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(194, 143);
+            this.guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(231, 143);
             this.guna2CustomGradientPanel2.TabIndex = 3;
             // 
             // guna2PictureBox4
             // 
             this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.CustomizableEdges = customizableEdges9;
             this.guna2PictureBox4.Image = global::QLHD_CLB.Properties.Resources.iconThongKe4;
             this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.Location = new System.Drawing.Point(129, 29);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.guna2PictureBox4.Size = new System.Drawing.Size(82, 83);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 8;
@@ -289,23 +333,27 @@
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2PictureBox3);
             this.guna2CustomGradientPanel3.Controls.Add(this.txtThongKeSuKien);
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2CustomGradientPanel3.CustomizableEdges = customizableEdges15;
             this.guna2CustomGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(190)))), ((int)(((byte)(194)))));
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.DarkSlateBlue;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(190)))), ((int)(((byte)(194)))));
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(404, 3);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(479, 3);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(195, 143);
+            this.guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(232, 143);
             this.guna2CustomGradientPanel3.TabIndex = 2;
             // 
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.CustomizableEdges = customizableEdges13;
             this.guna2PictureBox3.Image = global::QLHD_CLB.Properties.Resources.iconThongKe3;
             this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.Location = new System.Drawing.Point(133, 29);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.guna2PictureBox3.Size = new System.Drawing.Size(88, 83);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 6;
@@ -339,11 +387,13 @@
             this.guna2GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox1.Controls.Add(this.gunaChart1);
+            this.guna2GroupBox1.CustomizableEdges = customizableEdges17;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 505);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(802, 430);
+            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.guna2GroupBox1.Size = new System.Drawing.Size(951, 430);
             this.guna2GroupBox1.TabIndex = 4;
             this.guna2GroupBox1.Text = "Thống kê chi tiêu các tháng";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -357,7 +407,7 @@
             this.gunaChart1.Legend.LabelFont = chartFont1;
             this.gunaChart1.Location = new System.Drawing.Point(0, 40);
             this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(802, 390);
+            this.gunaChart1.Size = new System.Drawing.Size(951, 390);
             this.gunaChart1.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -402,14 +452,16 @@
             this.btn_tk1.BackColor = System.Drawing.Color.Transparent;
             this.btn_tk1.BorderColor = System.Drawing.Color.Transparent;
             this.btn_tk1.BorderRadius = 5;
+            this.btn_tk1.CustomizableEdges = customizableEdges19;
             this.btn_tk1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_tk1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_tk1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btn_tk1.ForeColor = System.Drawing.Color.White;
-            this.btn_tk1.Location = new System.Drawing.Point(427, 941);
+            this.btn_tk1.Location = new System.Drawing.Point(681, 941);
             this.btn_tk1.Name = "btn_tk1";
+            this.btn_tk1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.btn_tk1.Size = new System.Drawing.Size(180, 45);
             this.btn_tk1.TabIndex = 1;
             this.btn_tk1.Text = "Chi tiết";
@@ -432,7 +484,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 149);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // guna2GroupBox3
@@ -441,11 +493,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox3.Controls.Add(this.dtg_dsSuKien);
+            this.guna2GroupBox3.CustomizableEdges = customizableEdges21;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(12, 203);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(802, 280);
+            this.guna2GroupBox3.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.guna2GroupBox3.Size = new System.Drawing.Size(951, 280);
             this.guna2GroupBox3.TabIndex = 10;
             this.guna2GroupBox3.Text = "Các sự kiện sắp diễn ra và đang diễn ra";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -481,7 +535,7 @@
             this.dtg_dsSuKien.RowHeadersVisible = false;
             this.dtg_dsSuKien.RowHeadersWidth = 51;
             this.dtg_dsSuKien.RowTemplate.Height = 40;
-            this.dtg_dsSuKien.Size = new System.Drawing.Size(802, 240);
+            this.dtg_dsSuKien.Size = new System.Drawing.Size(951, 240);
             this.dtg_dsSuKien.TabIndex = 0;
             this.dtg_dsSuKien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_dsSuKien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -518,6 +572,7 @@
             // comboBoxlocThanhVienTheoThang
             // 
             this.comboBoxlocThanhVienTheoThang.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxlocThanhVienTheoThang.CustomizableEdges = customizableEdges23;
             this.comboBoxlocThanhVienTheoThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxlocThanhVienTheoThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxlocThanhVienTheoThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -527,6 +582,7 @@
             this.comboBoxlocThanhVienTheoThang.ItemHeight = 30;
             this.comboBoxlocThanhVienTheoThang.Location = new System.Drawing.Point(48, 953);
             this.comboBoxlocThanhVienTheoThang.Name = "comboBoxlocThanhVienTheoThang";
+            this.comboBoxlocThanhVienTheoThang.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.comboBoxlocThanhVienTheoThang.Size = new System.Drawing.Size(240, 36);
             this.comboBoxlocThanhVienTheoThang.TabIndex = 12;
             this.comboBoxlocThanhVienTheoThang.SelectedIndexChanged += new System.EventHandler(this.comboBoxlocThanhVienTheoThang_SelectedIndexChanged);
@@ -534,10 +590,12 @@
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.Controls.Add(this.dtg_thongkeThanhVienThamGia);
+            this.guna2GroupBox2.CustomizableEdges = customizableEdges25;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(12, 1001);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.guna2GroupBox2.Size = new System.Drawing.Size(446, 307);
             this.guna2GroupBox2.TabIndex = 11;
             this.guna2GroupBox2.Text = "Thống kê thành viên tham gia trong các tháng gần đây";
@@ -606,7 +664,7 @@
             this.gunaChart3.Legend.LabelFont = chartFont9;
             this.gunaChart3.Location = new System.Drawing.Point(12, 1370);
             this.gunaChart3.Name = "gunaChart3";
-            this.gunaChart3.Size = new System.Drawing.Size(802, 318);
+            this.gunaChart3.Size = new System.Drawing.Size(951, 318);
             this.gunaChart3.TabIndex = 14;
             chartFont10.FontName = "Arial";
             chartFont10.Size = 12;
@@ -637,14 +695,16 @@
             // btn_tk3
             // 
             this.btn_tk3.BorderRadius = 5;
+            this.btn_tk3.CustomizableEdges = customizableEdges27;
             this.btn_tk3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_tk3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_tk3.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btn_tk3.ForeColor = System.Drawing.Color.White;
-            this.btn_tk3.Location = new System.Drawing.Point(450, 1694);
+            this.btn_tk3.Location = new System.Drawing.Point(655, 1694);
             this.btn_tk3.Name = "btn_tk3";
+            this.btn_tk3.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.btn_tk3.Size = new System.Drawing.Size(180, 45);
             this.btn_tk3.TabIndex = 15;
             this.btn_tk3.Text = "Chi tiết";
@@ -654,6 +714,7 @@
             // 
             this.btn_tk2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btn_tk2.BorderRadius = 5;
+            this.btn_tk2.CustomizableEdges = customizableEdges29;
             this.btn_tk2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_tk2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -662,6 +723,7 @@
             this.btn_tk2.ForeColor = System.Drawing.Color.White;
             this.btn_tk2.Location = new System.Drawing.Point(655, 1314);
             this.btn_tk2.Name = "btn_tk2";
+            this.btn_tk2.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.btn_tk2.Size = new System.Drawing.Size(180, 45);
             this.btn_tk2.TabIndex = 16;
             this.btn_tk2.Text = "Chi tiết";
@@ -672,11 +734,13 @@
             this.guna2GroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox4.Controls.Add(this.gunaChart2);
+            this.guna2GroupBox4.CustomizableEdges = customizableEdges31;
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox4.Location = new System.Drawing.Point(486, 1001);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(328, 307);
+            this.guna2GroupBox4.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            this.guna2GroupBox4.Size = new System.Drawing.Size(477, 307);
             this.guna2GroupBox4.TabIndex = 17;
             this.guna2GroupBox4.Text = "Thống kê ngân sách";
             this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -688,7 +752,7 @@
             this.gunaChart2.Legend.LabelFont = chartFont17;
             this.gunaChart2.Location = new System.Drawing.Point(0, 40);
             this.gunaChart2.Name = "gunaChart2";
-            this.gunaChart2.Size = new System.Drawing.Size(328, 267);
+            this.gunaChart2.Size = new System.Drawing.Size(477, 267);
             this.gunaChart2.TabIndex = 10;
             chartFont18.FontName = "Arial";
             chartFont18.Size = 12;

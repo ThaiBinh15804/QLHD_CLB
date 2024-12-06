@@ -38,8 +38,12 @@
             this.txtTK = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Message = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.eyeOpen = new System.Windows.Forms.PictureBox();
+            this.eyeHide = new System.Windows.Forms.PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.eyeOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eyeHide)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -55,7 +59,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(508, 117);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(212, 15);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(243, 19);
             this.guna2HtmlLabel1.TabIndex = 23;
             this.guna2HtmlLabel1.Text = "Phầm mềm quản lý hoạt động câu lạc bộ";
             // 
@@ -148,7 +152,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(500, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 32);
+            this.label1.Size = new System.Drawing.Size(303, 41);
             this.label1.TabIndex = 15;
             this.label1.Text = "Chào mừng đến CLB";
             // 
@@ -160,16 +164,6 @@
             this.Message.Parent = this;
             this.Message.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.Message.Text = null;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackgroundImage = global::QLHD_CLB.Properties.Resources.undraw_team_collaboration_re_ow29;
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, -1);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(493, 471);
-            this.guna2Panel1.TabIndex = 24;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2Shapes1
             // 
@@ -185,11 +179,46 @@
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
             // 
+            // eyeOpen
+            // 
+            this.eyeOpen.Image = global::QLHD_CLB.Properties.Resources.eye_open1;
+            this.eyeOpen.Location = new System.Drawing.Point(820, 253);
+            this.eyeOpen.Name = "eyeOpen";
+            this.eyeOpen.Size = new System.Drawing.Size(26, 24);
+            this.eyeOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eyeOpen.TabIndex = 25;
+            this.eyeOpen.TabStop = false;
+            this.eyeOpen.Visible = false;
+            this.eyeOpen.Click += new System.EventHandler(this.eyeOpen_Click);
+            // 
+            // eyeHide
+            // 
+            this.eyeHide.Image = global::QLHD_CLB.Properties.Resources.icons8_hide_30;
+            this.eyeHide.Location = new System.Drawing.Point(820, 253);
+            this.eyeHide.Name = "eyeHide";
+            this.eyeHide.Size = new System.Drawing.Size(26, 24);
+            this.eyeHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eyeHide.TabIndex = 25;
+            this.eyeHide.TabStop = false;
+            this.eyeHide.Click += new System.EventHandler(this.eyeHide_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackgroundImage = global::QLHD_CLB.Properties.Resources.undraw_team_collaboration_re_ow29;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, -1);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(493, 471);
+            this.guna2Panel1.TabIndex = 24;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
             // FormDangNhap
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(888, 469);
+            this.Controls.Add(this.eyeOpen);
+            this.Controls.Add(this.eyeHide);
             this.Controls.Add(this.guna2Shapes1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -206,6 +235,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.eyeOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eyeHide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +254,7 @@
         private Guna.UI2.WinForms.Guna2MessageDialog Message;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.PictureBox eyeHide;
+        private System.Windows.Forms.PictureBox eyeOpen;
     }
 }

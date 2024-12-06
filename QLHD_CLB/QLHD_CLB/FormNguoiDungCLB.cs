@@ -600,5 +600,30 @@ namespace QLHD_CLB
                 formXemAnh.ShowDialog();
             }
         }
+
+        private void eyeOpen_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = true;
+            eyeOpen.Visible = false;
+            eyeHide.Visible = true;
+        }
+
+        private void eyeHide_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = false;
+            txtMatKhau.PasswordChar = '\0';
+            eyeOpen.Visible = true;
+            eyeHide.Visible = false;
+        }
+
+        private void dgvDSNguoiDung_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Kiểm tra cột và kiểu dữ liệu
+            if (dgvDSNguoiDung.Columns[e.ColumnIndex].Name == "MatKhau" && e.Value != null)
+            {
+                // Thay thế giá trị mật khẩu bằng dấu *
+                e.Value = new string('*', e.Value.ToString().Length);
+            }
+        }
     }
 }

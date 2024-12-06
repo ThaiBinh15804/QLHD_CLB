@@ -151,6 +151,8 @@ namespace QLHD_CLB
             HienThi_DSKeHoachDongQuy();
             HienThi_ComboBoxLocTrangThai();
             HienThi_ComboBoxTrangThai();
+            guna2DateTimePicker1.Checked = false;
+            guna2DateTimePicker2.Checked = false;
 
         }
 

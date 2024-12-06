@@ -286,6 +286,8 @@
     <Content Include="HinhAnh\AnhDaiDien\h5.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h4.jpg" />
     <Content Include="HinhAnh\AnhDaiDien\h3.jpg" />
+    <None Include="HinhAnh\eye-open.png" />
+    <None Include="HinhAnh\icons8-hide-30.png" />
     <Content Include="Resources\iconSideBar5.png" />
     <Content Include="Resources\iconThongKe1.png" />
     <Content Include="Resources\iconThongKe2.png" />

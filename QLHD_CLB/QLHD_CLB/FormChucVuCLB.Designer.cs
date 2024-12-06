@@ -218,7 +218,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(25, 272);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 25);
+            this.label4.Size = new System.Drawing.Size(65, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mô tả:";
             // 
@@ -227,7 +227,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 25);
+            this.label3.Size = new System.Drawing.Size(115, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên chức vụ:";
             // 
@@ -260,7 +260,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(25, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 25);
+            this.label2.Size = new System.Drawing.Size(113, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mã chức vụ:";
             // 
@@ -338,6 +338,7 @@
             this.dgvDSChucVu.GridColor = System.Drawing.Color.White;
             this.dgvDSChucVu.Location = new System.Drawing.Point(0, 40);
             this.dgvDSChucVu.Name = "dgvDSChucVu";
+            this.dgvDSChucVu.ReadOnly = true;
             this.dgvDSChucVu.RowHeadersVisible = false;
             this.dgvDSChucVu.RowHeadersWidth = 51;
             this.dgvDSChucVu.RowTemplate.Height = 40;
@@ -356,7 +357,7 @@
             this.dgvDSChucVu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvDSChucVu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDSChucVu.ThemeStyle.HeaderStyle.Height = 50;
-            this.dgvDSChucVu.ThemeStyle.ReadOnly = false;
+            this.dgvDSChucVu.ThemeStyle.ReadOnly = true;
             this.dgvDSChucVu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDSChucVu.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDSChucVu.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
